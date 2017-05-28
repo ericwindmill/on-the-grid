@@ -22,7 +22,7 @@ Additonally, the page will have:
 
 This app is essentially a single screen in which the user can input different CSS grid properties, and it will have two output boxes. One will output the code itself, and one will render the grid created by properties input. This render is the main attraction visually. There will also be a small area in the bottom right that provides any meta information or information required to use the tool (although I plan for the tool to be very self-explanatory). 
 
-![On the Grid wireframe](https://github.com/ericwindmill/on-the-grid/blob/master/on_the_grid_main_wireframe.png)
+![On the Grid wireframe](https://github.com/ericwindmill/on-the-grid/blob/master/docs/on_the_grid_main_wireframe.png)
 
 #Architecture and Technologies
 The project will use the following technologies:
