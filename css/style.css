@@ -1,0 +1,41 @@
+section {
+  background-color: dodgerblue; 
+  width: 50vh;
+  height: 50vh;
+}
+
+div { 
+  background-color: indigo;
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: repeat(10, 10%);
+}
+
+.grid-1 {
+  grid: 
+}
+.grid-2 {
+  grid: 
+}
+.grid-3 {
+  grid: 
+}
+.grid-4 {
+  grid: 
+}
+.grid-5 {
+  grid: 
+}
+.grid-6 {
+  grid: 
+}
+.grid-7 {
+  grid: 
+}
+.grid-8 {
+  grid: 
+}
