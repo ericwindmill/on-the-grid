@@ -4,7 +4,6 @@ On The Grid is a tool that teached developers about the newest CSS layout featur
 
 Grid offers a simple and straight forward way to layout HTML elements on a webpage. As of March 2017, CSS Grid is supported by all major browsers. Grid is the future of webpage layout.
 
-
 There are 27 total CSS properties that shipped with grid and allow a developer to manipulate the layout of a page. This project teaches the most important properties that you need to get up and running.
 
 #Functionality and MVP
@@ -23,7 +22,7 @@ Additonally, the page will have:
 
 This app is essentially a single screen in which the user can input different CSS grid properties, and it will have two output boxes. One will output the code itself, and one will render the grid created by properties input. This render is the main attraction visually. There will also be a small area in the bottom right that provides any meta information or information required to use the tool (although I plan for the tool to be very self-explanatory). 
 
-![On the Grid wireframe]()
+![On the Grid wireframe](https://github.com/ericwindmill/on-the-grid/blob/master/on_the_grid_main_wireframe.png)
 
 #Architecture and Technologies
 The project will use the following technologies:
