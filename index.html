@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
+    <title>On the Grid</title>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Arvo|Quicksand:300,400|Scope+One" rel="stylesheet"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="stylesheets/style.css" rel="stylesheet">
-
   </head>
   <body>
 
@@ -16,12 +15,18 @@
           <h2> A CSS Grid Playground</h2>
         </header>
 
-
-
-
-      <p class="grid-prop-label">grid-auto-flow:</p>
+      <p class="grid-prop-label label">grid-auto-flow:</p>
       <button id="flow-column-button">Column</button>
       <button id="flow-row-button">Row</button>
+
+      <p class="grid-row-gap-label label">grid-row-gap:</p>
+      <input type="text" 
+              id="row-gap-user-input"
+              />
+      <p class="grid-row-gap-label label">grid-column-gap:</p>
+      <input type="text" 
+              id="column-gap-user-input"
+              />
 
       <p>Number of grid items</p>
       <button id="add-element">+</button>
@@ -43,14 +48,13 @@
     </section>
 
     <section class="code-output">
-      <p> here i am in the output</p>
+      <div class="text-editor">
+        .wrapper{
+            <p id="grid-auto">grid-auto-flow:</p>
+        }
+      </div>
     </section>
 
-
-    <section class="meta-info">
-
-      <p> here i am in the meta</p>
-    </section> 
 
 
     <script type="application/javascript" src="js/on-the-grid.js"></script>

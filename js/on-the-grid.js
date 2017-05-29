@@ -1,16 +1,29 @@
 
-var divs = Array.from(document.getElementsByClassName('grid-item'))
-
-
-
-
 const wrapper = document.getElementById('wrapper')
+
+const rowGap = document.getElementById('row-gap-user-input')
+rowGap.onkeyup = e => {
+  if (e.keyCode === 13) {
+    console.log(rowGap)
+    wrapper.style.gridRowGap = rowGap.value
+  }
+}
+
+const columnGap = document.getElementById('column-gap-user-input')
+columnGap.onkeyup = e => {
+  if (e.keyCode === 13) {
+    console.log(columnGap)
+    wrapper.style.gridColumnGap = columnGap.value
+  }
+}
 
 document.getElementById('flow-column-button').onclick = () => {
   wrapper.style.gridAutoFlow = 'column'
+  document.getElementById('grid-auto').innerHTML += ' column'
 }
 document.getElementById('flow-row-button').onclick = () => {
   wrapper.style.gridAutoFlow = 'row'
+  document.getElementById('grid-auto').innerHTML = 'grid-auto-flow: row'
 }
 
 var gridNum = 10
@@ -20,25 +33,14 @@ document.getElementById('add-element').onclick = () => {
   gridItem.innerHTML = gridNum
   gridItem.className = 'grid-item'
   wrapper.appendChild(gridItem).id = `display-grid-${gridNum}`
-  console.log(gridNum)
 }
 
 document.getElementById('delete-element').onclick = () => {
   var gridItem = document.getElementById(`display-grid-${gridNum}`)
   gridNum -= 1
-  console.log(gridItem)
   wrapper.removeChild(gridItem)
-  console.log(gridNum)
 }
 
 
 
-// const form = document.getElementById('input1')
-// form.onsubmit = () => {
-//   const input2 = document.getElementById('input2')
-//   console.log(input2.value)
-//   divs.forEach(div => {
-//     div.style.color = 'green'
-//   })
-// }
 

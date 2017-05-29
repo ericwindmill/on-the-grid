@@ -12,3 +12,7 @@ Properties to manipulate:
   *adding new grid items
   *removing grid items
   *I'll need a way to select grid items.
+
+
+  ideas:
+  *style window like browser
