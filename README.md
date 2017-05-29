@@ -13,7 +13,6 @@ On the Grid will allow users to:
 * Change the size of individual grid rows and columns.
 * Adjust grid features such as "grid-auto-flow", "justify-content", "justify-items", "align-content", "align-items", "align-self", "justify-self"
 * Select grid items by clicking on them and adjusting the properties individually. This is the most important functionality because it will allow users to dynamically create real webpage layouts.
-* Test their skills with a grid game. A user will have to change the grid properities in order to achieve a given layout. (Inspired by Flexbox Froggy)
 
 Additonally, the page will have:
 * A list of resources to continue learning. 
@@ -68,7 +67,7 @@ This day will be entirely devoted to building the logic that will change the out
 
 ### Day 3:
 * Add functionality to manipulate grid items when clicked.
-  * Click on the grid-item and render a form, which allows user to manipuate the following properties:
+  * Click on the grid-item and render a form (modal?), which allows user to manipuate the following properties:
     * grid-column-start
       * Allow user to use column number or 'span' functionality
     * grid-row-start
@@ -82,8 +81,10 @@ This day will be entirely devoted to building the logic that will change the out
 
 
 ### Day 4:
-* Build game feature that requires users to change the grid properties in order to achieve a certain given layout. (I.E. - "Use grid features to create a layout that has a navbar at the top that is 100% of the screen width, a main content feature that is 70% of the screen width, and a side bar that is 30% of the screen width." And the screen will provide 3 red boxes that turn green when the user has successfully created that grid.)
+* Add functionality to output the code required to make the grid needed.
+* Wrap up styling.
+
 
 
 # Bonus Features:
-* Add multiple levels.
+* Build game feature that requires users to change the grid properties in order to achieve a certain given layout. (I.E. - "Use grid features to create a layout that has a navbar at the top that is 100% of the screen width, a main content feature that is 70% of the screen width, and a side bar that is 30% of the screen width." And the screen will provide 3 red boxes that turn green when the user has successfully created that grid.)
