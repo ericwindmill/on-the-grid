@@ -13,6 +13,7 @@ On the Grid will allow users to:
 * Change the size of individual grid rows and columns.
 * Adjust grid features such as "grid-auto-flow", "justify-content", "justify-items", "align-content", "align-items", "align-self", "justify-self"
 * Select grid items by clicking on them and adjusting the properties individually. This is the most important functionality because it will allow users to dynamically create real webpage layouts.
+* Dynamically update the content of any grid item, using 'contenteditable' HTML5 feature. This essentially turns each grid item into a text editor, and will show the developer how the space the content takes up will affect the grid.
 
 Additonally, the page will have:
 * A list of resources to continue learning. 
