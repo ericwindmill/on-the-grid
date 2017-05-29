@@ -1,18 +1,22 @@
 Properties to manipulate:
-  *grid gap / column gap / row gap
-  *resizing columns / rows
+  *resizing columns / rows INDIVIDUALLY
     *incluce minmax?
     *include auto-fill / auto-fit?
-  *changing number of columns / rows (specific number or auto)
+
   *aligning / justifying content and items
-  *grid auto flow
   
-  *resizing griditems
+  *resizing griditems as in (grid-row: a / b)
   *aligning / justifying self
   *adding new grid items
   *removing grid items
   *I'll need a way to select grid items.
 
 
+
   ideas:
   *style window like browser
+  *include information about fr and minmax etc somehow.
+
+  done:
+  *grid auto flow
+  *changing number of columns / rows (specific number or auto)

@@ -1,4 +1,4 @@
-#Background
+# Background
 
 On The Grid is a tool that teached developers about the newest CSS layout feature: Grid. 
 

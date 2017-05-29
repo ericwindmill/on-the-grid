@@ -1,28 +1,17 @@
 /*============================*
     Basic Styles
 *============================*/
+body {
+  margin: 0;
+}
 
-p, button {
+p, button, input {
   font-family: monospace;
-}
-
-.label {
-  background: rgba(200, 200, 200, 1);
-  display: inline-block;
-}
-
-#main-head {
-  margin: 10px;
-  display:flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  margin-bottom: 30px;
 }
 
 h1, h2 {
   font-family: 'Quicksand', serif;
     margin: 0;
-    display: inline-block;
     font-weight: 300;
 }
 
@@ -32,18 +21,10 @@ h1 {
 }
 
 h2 {
+  font-size: 1em;
+  vertical-align: middle;
 }
 
-.grid-item{
-  background: dodgerblue;
-  border-radius: 10px;
-  color: linen;
-  font-size: 2em;
-  text-align: center;
-  padding: auto;
-  font-family: 'Alegreya Sans', sans-serif;
-  font-weight: 100;
-}
 
 /*============================*
     Top Level Grid
@@ -52,7 +33,7 @@ h2 {
 
 body{
   display:grid;
-  grid-template-columns: 500px 1fr 1fr;
+  grid-template-columns: 450px 1fr 1fr;
   grid-template-rows: 500px minmax(250px, 1fr);
 }
 
@@ -97,7 +78,133 @@ body{
 #wrapper {
   display: grid;
   grid-gap: 5px;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, auto);
+
   grid-auto-flow: row;
 }
+
+.grid-item{
+  background: dodgerblue;
+  border-radius: 10px;
+  color: linen;
+  font-size: 2em;
+  text-align: center;
+  padding: auto;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 100;
+}
+
+
+/*============================*
+    UI Section Main Styles
+*============================*/
+#main-head {
+  padding:10px;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px darkgrey solid;
+}
+
+.ui-subhead {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.wrapper-properties {
+  border-bottom: 1px darkgrey solid;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.grid-item-properties {
+  border-bottom: 1px darkgrey solid;
+}
+
+code {
+  font-size: 1.2em;
+  padding-left: 5px;
+  
+}
+
+button {
+  background-color: gainsboro;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+  margin: 5px;
+}
+
+button:active {
+  background-color: dodgerblue;
+}
+
+input {
+  background-color: gainsboro;
+  font-size: 16px;
+  padding: 10px;
+  border: grey;
+  border-radius: 5px;
+  width: 40px;
+  margin: 3px;
+}
+
+input:focus {
+  background-color: dodgerblue;
+}
+
+.tooltip { position: relative; }
+.tooltip:hover:before, .tooltip:hover:after {
+  display: block;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  background-color: black;
+}
+
+.tooltip:hover:before {
+    content:"";
+    width:8px;
+    height:8px;
+    transform:rotate(45deg);
+    top:27px;
+    left:22px;
+}
+
+.tooltip:hover:after {
+    content:attr(data-tip);
+    color:linen;
+    top:31px;
+    left:0;
+    width:220px;
+    font-size:14px;
+    padding:10px;
+    line-height:1.36;
+    box-sizing: border-box;
+}
+
+
+/*============================*
+    UI Section Div Styles
+*============================*/
+#gap-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#row-count-box {
+  border-top: 1px darkgrey solid;
+  border-bottom: 1px darkgrey solid;
+  display:flex;
+  flex-flow: column;
+}
+
+
+
+#resize-form {
+  display:flex;
+  flex-flow: column;
+}
+
+

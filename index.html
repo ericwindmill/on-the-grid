@@ -10,31 +10,81 @@
   <body>
 
     <section class="user-input">
-        <header id="main-head">
-          <h1> On The Grid </h1>
-          <h2> A CSS Grid Playground</h2>
-        </header>
+      <header id="main-head">
+        <h1> On The Grid </h1>
+        <h2> A CSS Grid Playground</h2>
+      </header>
 
-      <p class="grid-prop-label label">grid-auto-flow:</p>
-      <button id="flow-column-button">Column</button>
-      <button id="flow-row-button">Row</button>
+      <section class="wrapper-properties">
+        <p class="ui-subhead"> .wrapper properties </p>
 
-      <p class="grid-row-gap-label label">grid-row-gap:</p>
-      <input type="text" 
-              id="row-gap-user-input"
-              />
-      <p class="grid-row-gap-label label">grid-column-gap:</p>
-      <input type="text" 
-              id="column-gap-user-input"
-              />
+        <div id="row-count-box">
+          <code>Number of Rows:
+            <button id="add-row">+</button>
+            <button id="delete-row">-</button>
+            <button id="auto-row">auto</button>
+          </code>
+          <code>Number of Columns:
+            <button id="add-column">+</button>
+            <button id="delete-column">-</button>
+            <button id="auto-column">auto</button>
+          </code>
+        </div>
 
-      <p>Number of grid items</p>
-      <button id="add-element">+</button>
-      <button id="delete-element">-</button>
+        <code id="resize-form"> 
+          <p>Resize Rows / Columns</p>
+          <div>
+            <span data-tip="choose any row number" class="tooltip">
+                Row Number: <input type="text" id="row-num-input" class="ui-input" value="1"/>
+            </span>
+            <span data-tip="try 2fr or 100px " class="tooltip">
+                Row Size: <input type="text" id="row-resize-input" class="ui-input" value="1fr"/>
+            </span>
+          </div>
+          <div>
+            <span data-tip="choose any column number" class="tooltip">
+                Column Number: <input type="text" id="column-num-input" class="ui-input" value="1"/>
+            </span>
+            <span data-tip="try 2fr or 100px " class="tooltip">
+                Column Size: <input type="text" id="column-resize-input" class="ui-input" value="1fr"/>
+            </span>
+          </div>
+        </code>
+
+
+        <code>grid-auto-flow:
+          <button id="flow-column-button">Column</button>
+          <button id="flow-row-button">Row</button>
+        </code>
+
+        <div  id="gap-form">
+          <code>grid-row-gap:
+            <span data-tip="try 10px or 5%" class="tooltip">
+              <input type="text" id="row-gap-user-input" placeholder="5px"/></span>
+          </code>
+          <code>grid-column-gap:
+            <span data-tip="try 10px or 5%" class="tooltip">
+            <input type="text" id="column-gap-user-input" placeholder="5px" /></span>
+          </code>
+        </div>
+      </section>
+
+      <section class="grid-item-properties">
+        <p class="ui-subhead"> .grid-item properties </p>
+        <code>Number of grid items:
+          <button id="add-element">+</button>
+          <button id="delete-element">-</button>
+        </code>
+      </section>
+
     </section>
 
 
-    <section class="display" id="wrapper">
+    <section class="display" id="wrapper" 
+              style='
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+              '>
       <div id="display-grid-1" class="grid-item"> 1 </div>
       <div id="display-grid-2" class="grid-item"> 2 </div>
       <div id="display-grid-3" class="grid-item"> 3 </div>
@@ -47,13 +97,13 @@
       <div id="display-grid-10" class="grid-item">10</div>
     </section>
 
-    <section class="code-output">
+    <!--<section class="code-output">
       <div class="text-editor">
         .wrapper{
             <p id="grid-auto">grid-auto-flow:</p>
         }
       </div>
-    </section>
+    </section>-->
 
 
 
