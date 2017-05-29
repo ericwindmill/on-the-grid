@@ -6,7 +6,7 @@ Grid offers a simple and straight forward way to layout HTML elements on a webpa
 
 There are 27 total CSS properties that shipped with grid and allow a developer to manipulate the layout of a page. This project teaches the most important properties that you need to get up and running.
 
-#Functionality and MVP
+# Functionality and MVP
 
 On the Grid will allow users to:
   *Change preset grid layout features and see results in real-time.
