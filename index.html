@@ -3,21 +3,56 @@
   <head>
     <title></title>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Quicksand:300,400|Scope+One" rel="stylesheet"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
+
   </head>
   <body>
-    <section class="grid">
-      <div class="grid-1"> 1 </div>
-      <div class="grid-2"> 2 </div>
-      <div class="grid-3"> 3 </div>
-      <div class="grid-4"> 4 </div>
-      <div class="grid-5"> 5 </div>
-      <div class="grid-6"> 6 </div>
-      <div class="grid-7"> 7 </div>
-      <div class="grid-8"> 8 </div>
-      <div class="grid-9"> 9 </div>
-      <div class="grid-10">10</div>
+
+    <section class="user-input">
+        <header id="main-head">
+          <h1> On The Grid </h1>
+          <h2> A CSS Grid Playground</h2>
+        </header>
+
+
+
+
+      <p class="grid-prop-label">grid-auto-flow:</p>
+      <button id="flow-column-button">Column</button>
+      <button id="flow-row-button">Row</button>
+
+      <p>Number of grid items</p>
+      <button id="add-element">+</button>
+      <button id="delete-element">-</button>
     </section>
+
+
+    <section class="display" id="wrapper">
+      <div id="display-grid-1" class="grid-item"> 1 </div>
+      <div id="display-grid-2" class="grid-item"> 2 </div>
+      <div id="display-grid-3" class="grid-item"> 3 </div>
+      <div id="display-grid-4" class="grid-item"> 4 </div>
+      <div id="display-grid-5" class="grid-item"> 5 </div>
+      <div id="display-grid-6" class="grid-item"> 6 </div>
+      <div id="display-grid-7" class="grid-item"> 7 </div>
+      <div id="display-grid-8" class="grid-item"> 8 </div>
+      <div id="display-grid-9" class="grid-item"> 9 </div>
+      <div id="display-grid-10" class="grid-item">10</div>
+    </section>
+
+    <section class="code-output">
+      <p> here i am in the output</p>
+    </section>
+
+
+    <section class="meta-info">
+
+      <p> here i am in the meta</p>
+    </section> 
+
+
+    <script type="application/javascript" src="js/on-the-grid.js"></script>
   </body>
 </html>

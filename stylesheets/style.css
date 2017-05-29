@@ -1,41 +1,94 @@
-section {
-  background-color: dodgerblue; 
-  width: 50vh;
-  height: 50vh;
+/*============================*
+    Basic Styles
+*============================*/
+
+p, button {
+  font-family: monospace;
 }
 
-div { 
-  background-color: indigo;
+.grid-prop-label {
+  background: rgba(200, 200, 200, 1);
+  display: inline-block;
+}
+
+#main-head {
+  margin: 10px;
+  display:flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+h1, h2 {
+  font-family: 'Quicksand', serif;
+    margin: 0;
+    display: inline-block;
+    font-weight: 300;
+}
+
+h1 {
+  font-size: 2em;
+  display: inline-block;
+}
+
+h2 {
+}
+
+.grid-item{
+  background: dodgerblue;
+  border-radius: 10px;
+  color: linen;
+  font-size: 2em;
+  text-align: center;
+  padding: auto;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: 100;
+}
+
+/*============================*
+    Top Level Grid
+*============================*/
+
+
+body{
+  display:grid;
+  grid-template-columns: 500px 1fr 1fr;
+  grid-template-rows: 500px minmax(300px, 1fr);
+}
+
+.user-input {
+  grid-column: 1; 
+  grid-row: 1;
+  background-color: white;
+}
+
+.code-output {
+  grid-column: 1 / 3; 
+  grid-row: 2;
+  background-color: rgba(61, 74, 84, 1);
+}
+
+.meta-info {
+  grid-column: 3; 
+  grid-row: 2;
+  background-color: slategrey;
 }
 
 
-.grid {
+.display {
+  grid-column: 2 / 4;
+  grid-row: 1;
+  background: rgba(30, 30, 30, 1);
+  padding: 30px;
+}
+
+/*============================*
+   Display Sub Grid
+*============================*/
+.display {
   display: grid;
-  grid-template-columns: repeat(10, 10%);
-  grid-template-rows: repeat(10, 10%);
-}
-
-.grid-1 {
-  grid: 
-}
-.grid-2 {
-  grid: 
-}
-.grid-3 {
-  grid: 
-}
-.grid-4 {
-  grid: 
-}
-.grid-5 {
-  grid: 
-}
-.grid-6 {
-  grid: 
-}
-.grid-7 {
-  grid: 
-}
-.grid-8 {
-  grid: 
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: repeat(5, auto);
+  grid-auto-flow: row;
 }
