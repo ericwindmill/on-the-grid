@@ -1,9 +1,9 @@
 Properties to manipulate:
-  *resizing columns / rows INDIVIDUALLY
-    *incluce minmax?
-    *include auto-fill / auto-fit?
 
-  *aligning / justifying content and items
+  *incluce minmax?
+  *include auto-fill / auto-fit?
+  *align / justify content? 
+ 
   
   *resizing griditems as in (grid-row: a / b)
   *aligning / justifying self
@@ -19,4 +19,7 @@ Properties to manipulate:
 
   done:
   *grid auto flow
+  *grid gap
   *changing number of columns / rows (specific number or auto)
+  *resizing columns / rows INDIVIDUALLY
+   *aligning / justifying items
