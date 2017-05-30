@@ -9,13 +9,13 @@ Properties to manipulate:
 
   ideas:
   *style window like browser
-  *style the boxes out!
-  * content editable!
+
+  
 
   bugs:
   'undefined' after too many blocks
   when removing blocks, color doesn't revert correctly
-  blocks expand past grid if you over do it.
+  blocks expand past grid if you type in too much text.
 
   done:
   *grid auto flow
@@ -28,3 +28,5 @@ Properties to manipulate:
   *I'll need a way to select grid items.
     *resizing griditems as in (grid-row: a / b)
   *aligning / justifying self
+  * content editable!
+    *style the boxes out!

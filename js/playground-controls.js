@@ -1,9 +1,10 @@
+var Tutorial = require('./tutorial')
 
 document.addEventListener('DOMContentLoaded', () => {
   // ======== "Global" vars ======== //
   const wrapper = document.getElementById('wrapper')
   const gridItems = document.querySelectorAll('#wrapper div')
-  
+
   // ======== Grid Items Color ======== //
   let nextColor = 100
   gridItems.forEach(item => {
@@ -109,18 +110,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ======== Buttons to change number of grid item ======== //
-  let gridNum = -1
+  let gridNum = 10
   const lyrics = ['and', 'nothing', 'to', 'get', 'hung', 'about', 'Strawberry', 'Fields', 'Forever',
                   'cause', "I'm", 'going', 'down', 'to', 'Strawberry', 'Fields', 'nothing', 'is', 'real'
                  ]
-
+  let lyricsIdx = 0
   document.getElementById('add-element').onclick = () => {
     gridNum += 1
-    if (gridNum > lyrics.length) {
-      gridNum = -1
+    if (lyricsIdx >= lyrics.length) {
+      lyricsIdx = 0
     }
     var gridItem = document.createElement('DIV')
-    gridItem.innerHTML = lyrics[gridNum]
+    gridItem.innerHTML = lyrics[lyricsIdx]
+    lyricsIdx += 1
     gridItem.className = 'grid-item'
     gridItem.style.backgroundColor = `hsl(336, 100%, ${nextColor}%`
     nextColor -= 2
@@ -185,11 +187,13 @@ document.addEventListener('DOMContentLoaded', () => {
   justifySelf.onchange = () => {
     item.style.justifySelf = justifySelf.value
   }
-
   const alignSelf = document.getElementById('align-self-select')
   alignSelf.onchange = () => {
     item.style.alignSelf = alignSelf.value
   }
 
-})
 
+// ======== Begin Tutorial ====== //
+  const tutorialLink = document.getElementById('begin-tutorial-link')
+  tutorialLink.addeventListener('click', Tutorial)
+})
