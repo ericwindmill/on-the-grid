@@ -1,10 +1,15 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-
-
   // ======== "Global" vars ======== //
   const wrapper = document.getElementById('wrapper')
-
+  const gridItems = document.querySelectorAll('#wrapper div')
+  
+  // ======== Grid Items Color ======== //
+  let nextColor = 100
+  gridItems.forEach(item => {
+    item.style.backgroundColor = `hsl(336, 100%, ${nextColor}%`
+    nextColor -= 2
+  })
 
   // ======== Inputs to change row / column numbers ======== //
   let rowNum = 5
@@ -34,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
     columnNum = 5
     wrapper.style.gridTemplateColumns = `auto`
   }
-
 
   // ======== Inputs to change row / column size ======== //
   const resizeRowNum = document.getElementById('row-num-input')
@@ -94,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========  Buttons to change justification and alignment ======== //
-
   const justifySelection = document.getElementById('justify-select')
   justifySelection.onchange = () => {
     wrapper.style.justifyItems = justifySelection.value
@@ -105,14 +108,22 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.style.alignItems = alignSelection.value
   }
 
-
   // ======== Buttons to change number of grid item ======== //
-  let gridNum = 10
+  let gridNum = -1
+  const lyrics = ['and', 'nothing', 'to', 'get', 'hung', 'about', 'Strawberry', 'Fields', 'Forever',
+                  'cause', "I'm", 'going', 'down', 'to', 'Strawberry', 'Fields', 'nothing', 'is', 'real'
+                 ]
+
   document.getElementById('add-element').onclick = () => {
     gridNum += 1
+    if (gridNum > lyrics.length) {
+      gridNum = -1
+    }
     var gridItem = document.createElement('DIV')
-    gridItem.innerHTML = gridNum
+    gridItem.innerHTML = lyrics[gridNum]
     gridItem.className = 'grid-item'
+    gridItem.style.backgroundColor = `hsl(336, 100%, ${nextColor}%`
+    nextColor -= 2
     wrapper.appendChild(gridItem).id = `display-grid-${gridNum}`
     selectors()
   }
@@ -120,20 +131,65 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('delete-element').onclick = () => {
     var gridItem = document.getElementById(`display-grid-${gridNum}`)
     gridNum -= 1
+    nextColor += 2
     wrapper.removeChild(gridItem)
   }
 
-
   // ======== Select a Grid Item by Clicking ======== //
+  let item;  
   let selectGridItem = e => {
-    const item = e.target
-    console.log(item)
+    item = e.target
+    selectors()
+    if (item.nodeName === 'DIV') {
+      item.style.border = '2px slategrey solid'
+    } else {
+      item.parentNode.style.border = '2px slategrey solid'
+    }
   }
   const selectors = () => {
     document.querySelectorAll('#wrapper div').forEach(div => {
       div.addEventListener('click', selectGridItem)
+      div.style.border = ''
     })
   }
   selectors()
+
+  // ======== Change Grid Item Column Pos ======== //
+  const gridColStartInput = document.getElementById('grid-column-start')
+  gridColStartInput.onkeyup = e => {
+    if (e.keyCode === 13) {
+      item.style.gridColumnStart = gridColStartInput.value
+    }
+  }
+  const gridColEndInput = document.getElementById('grid-column-end')
+  gridColEndInput.onkeyup = e => {
+    if (e.keyCode === 13) {
+      item.style.gridColumnEnd = gridColEndInput.value
+    }
+  }
+  const gridRowStartInput = document.getElementById('grid-row-start')
+  gridRowStartInput.onkeyup = e => {
+    if (e.keyCode === 13) {
+      item.style.gridRowStart = gridRowStartInput.value
+    }
+  }
+  const gridRowEndInput = document.getElementById('grid-row-end')
+  gridRowEndInput.onkeyup = e => {
+    if (e.keyCode === 13) {
+      item.style.gridRowEnd = gridRowEndInput.value
+    }
+  }
+
+// ======== Change Grid Item Self Justification / Alignment ======== //
+  const justifySelf = document.getElementById('justify-self-select')
+  justifySelf.onchange = () => {
+    item.style.justifySelf = justifySelf.value
+  }
+
+  const alignSelf = document.getElementById('align-self-select')
+  alignSelf.onchange = () => {
+    item.style.alignSelf = alignSelf.value
+  }
+
 })
 

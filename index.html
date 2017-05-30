@@ -6,6 +6,9 @@
     <link href="https://fonts.googleapis.com/css?family=Arvo|Quicksand:300,400|Scope+One" rel="stylesheet"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="stylesheets/style.css" rel="stylesheet">
+    <script type="application/javascript" src="js/playground.js"></script>
+    <script type="application/javascript" src="js/game.js"></script>
+
   </head>
   <body>
 
@@ -15,9 +18,8 @@
         <h2> A CSS Grid Playground</h2>
       </header>
 
-      <section class="wrapper-properties">
-        <p class="ui-subhead"> .wrapper properties </p>
-
+      <section class="grid-setup">
+        <p class="ui-subhead"> grid setup </p>
         <div id="row-count-box">
           <code>Number of Rows:
             <button id="add-row">+</button>
@@ -29,10 +31,17 @@
             <button id="delete-column">-</button>
             <button id="auto-column">auto</button>
           </code>
+          <code>Number of grid items:
+            <button id="add-element">+</button>
+            <button id="delete-element">-</button>
+          </code>
         </div>
+      </section>
 
+      <section class="wrapper-properties">
+        <p class="ui-subhead"> .wrapper properties </p>
         <code id="resize-form"> 
-          <p>Resize Rows / Columns</p>
+          <p class="ui-h3">Resize Rows / Columns:</p>
           <div>
             <span data-tip="choose any row number" class="tooltip">
                 Row Number: <input type="text" id="row-num-input" class="ui-input" value="1"/>
@@ -67,10 +76,7 @@
             <input type="text" id="column-gap-user-input" placeholder="5px" /></span>
           </code>
         </div>
-      </section>
 
-      <!-- justify items changes position of all things, 
-           justify content justifies the content as a whole object --> 
         <div id="alignment-selections">
           <code>justify-items:
             <select id="justify-select">
@@ -80,7 +86,6 @@
               <option id="justify-items-stretch" value="stretch">stretch</option>
             </select>
           </code>
-
           <code>align-items:
             <select id="align-select">
               <option id="align-items-start" value="start" >start</option>
@@ -91,43 +96,89 @@
           </code>
         </div>
 
+      </section>
+
+      <!-- justify items changes position of all things, 
+           justify content justifies the content as a whole object --> 
+
+
 
       <section class="grid-item-properties">
         <p class="ui-subhead"> .grid-item properties </p>
-        <code>Number of grid items:
-          <button id="add-element">+</button>
-          <button id="delete-element">-</button>
-        </code>
+        <p class="click-to-select"> (click grid item to select) </p>
+
+
+        <div id="grid-item-location-form">
+          <code>grid-column:
+            <span data-tip="choose the start column" class="tooltip">
+              <input id='grid-column-start' type="text"> / 
+            </span>
+            <span data-tip="choose the end column" class="tooltip">
+              <input id='grid-column-end' type="text" data-tip="choose the end column" class="tooltip">
+            </span>
+          </code>
+          <code>grid-row:
+            <span data-tip="choose the start row" class="tooltip">
+              <input id='grid-row-start'type="text" data-tip="choose the start row" class="tooltip"> /
+            </span> 
+            <span data-tip="choose the end row" class="tooltip">
+              <input id='grid-row-end' type="text" data-tip="choose the end row" class="tooltip">
+            </span>
+          </code>
+        </div>
+
+        <div id="self-alignment-selections">
+          <code>justify-self:
+            <select id="justify-self-select">
+              <option id="justify-self-start" value="start" >start</option>
+              <option id="justify-self-end" value="end">end</option>
+              <option id="justify-self-center" value="center">center</option>
+              <option id="justify-self-stretch" value="stretch">stretch</option>
+            </select>
+          </code>
+          <code>align-self:
+            <select id="align-self-select">
+              <option id="align-self-start" value="start" >start</option>
+              <option id="align-self-end" value="end">end</option>
+              <option id="align-self-center" value="center">center</option>
+              <option id="align-self-stretch" value="stretch">stretch</option>
+            </select>
+          </code>
+        </div>
       </section>
 
     </section>
-
 
     <section class="display" id="wrapper" 
               style='
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                 grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
               '>
-      <div id="display-grid-1" class="grid-item"> 1 </div>
-      <div id="display-grid-2" class="grid-item"> 2 </div>
-      <div id="display-grid-3" class="grid-item"> 3 </div>
-      <div id="display-grid-4" class="grid-item"> 4 </div>
-      <div id="display-grid-5" class="grid-item"> 5 </div>
-      <div id="display-grid-6" class="grid-item"> 6 </div>
-      <div id="display-grid-7" class="grid-item"> 7 </div>
-      <div id="display-grid-8" class="grid-item"> 8 </div>
-      <div id="display-grid-9" class="grid-item"> 9 </div>
-      <div id="display-grid-10" class="grid-item">10</div>
+      <div id="display-grid-1" class="grid-item"><span id="grid-item-span" contenteditable="true">cuase</span></div>
+      <div id="display-grid-2" class="grid-item"><span id="grid-item-span" contenteditable="true">I'm</span></div>
+      <div id="display-grid-3" class="grid-item"><span id="grid-item-span" contenteditable="true">going</span></div>
+      <div id="display-grid-4" class="grid-item"><span id="grid-item-span" contenteditable="true">down</span></div>
+      <div id="display-grid-5" class="grid-item"><span id="grid-item-span" contenteditable="true">to</span></div>
+      <div id="display-grid-6" class="grid-item"><span id="grid-item-span" contenteditable="true">Strawberry</span></div>
+      <div id="display-grid-7" class="grid-item"><span id="grid-item-span" contenteditable="true">Fields</span></div>
+      <div id="display-grid-8" class="grid-item"><span id="grid-item-span" contenteditable="true">nothing</span></div>
+      <div id="display-grid-9" class="grid-item"><span id="grid-item-span" contenteditable="true">is</span></div>
+      <div id="display-grid-10" class="grid-item"><span id="grid-item-span" contenteditable="true">real</span></div>
     </section>
 
-    <!--<section class="code-output">
-      <div class="text-editor">
+    <section class="information">
+      <strong>Welcome to On the Grid! </strong><br />
+      Grid is the newest and most exciting layout tool in CSS3. Use it to play elements virtually anywhere on a webpage. 
+      <ul>
+        <li>fr - a new unit of measurement that stands for fraction, an fr will take up a fraction of the <em>remaining</em> space of its parent.
+        For example: "400px 2fr 1fr"</li>
+        <li>try minmax(min, max) for column and row sizes!</li>
+        <li>when establishing grid-template-columns or grid-template-rows, try auto-fill</li>
+      </ul>
 
-      </div>
-    </section>-->
+      <h3> This is all gibberish! Take me to the <a href=""> tutorial </a> </h3>
+      
+    </section>
 
-
-
-    <script type="application/javascript" src="js/on-the-grid.js"></script>
   </body>
 </html>
