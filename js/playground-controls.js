@@ -1,5 +1,3 @@
-var Tutorial = require('./tutorial')
-
 document.addEventListener('DOMContentLoaded', () => {
   // ======== "Global" vars ======== //
   const wrapper = document.getElementById('wrapper')
@@ -194,6 +192,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // ======== Begin Tutorial ====== //
-  const tutorialLink = document.getElementById('begin-tutorial-link')
-  tutorialLink.addeventListener('click', Tutorial)
+
+
+
+
 })
+
