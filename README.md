@@ -8,12 +8,12 @@ There are 27 total CSS properties that shipped with grid, which will be taught b
 ## Functionality and MVP
 On the Grid will allow users to:
 * Change grid layout features and see results in real-time.
-* Copy and paste the output code created by the uniqie set of display properties they set.
 * Change the number of items to be positioned by grid, as well as the size of each item. This is based on grid location (i.e. which column and row its positioned in.)
 * Change the size of individual grid rows and columns.
 * Adjust grid features such as "grid-auto-flow", "justify-content", "justify-items", "align-content", "align-items", "align-self", "justify-self"
 * Select grid items by clicking on them and adjusting the properties individually. This is the most important functionality because it will allow users to dynamically create real webpage layouts.
 * Dynamically update the content of any grid item, using 'contenteditable' HTML5 feature. This essentially turns each grid item into a text editor, and will show the developer how the space the content takes up will affect the grid.
+* Build game feature that requires users to change the grid properties in order to achieve a certain given layout. (I.E. - "Use grid features to create a layout that has a navbar at the top that is 100% of the screen width, a main content feature that is 70% of the screen width, and a side bar that is 30% of the screen width." And the screen will provide 3 red boxes that turn green when the user has successfully created that grid.)
 
 Additonally, the page will have:
 * A list of resources to continue learning. 
@@ -28,11 +28,14 @@ This app is essentially a single screen in which the user can input different CS
 
 ## Architecture and Technologies
 The project will use the following technologies:
-* Javascript will provide the main functionality (injecting the input changes into the code and rerendering)
+* Javascript will provide the main functionality (injecting the input changes into the code and re-rendering. 
 * The design will use pure CSS (and obviously utilize Grid!)
 * Basic HTML elements will be inserted into the DOM based on user input.
 
 ## Implementation Timeline
+
+### Outline
+2 days to build the base functionality (Grid Playground) and two days to implelment the 'game' or test.
 
 ### Day 1:
 * Setup the project, node modules, and technologies.
@@ -79,13 +82,17 @@ This day will be entirely devoted to building the logic that will change the out
       * Allow user to use column number or 'span' functionality
     * justify-self
     * justify-end
+* Begin functionality on game. (Which requirs all the previous functionality). 
 
 
 ### Day 4:
-* Add functionality to output the code required to make the grid needed.
+* Continue functionality on game mode. (I hope to achieve 5 levels).
+  * Re-render screen with pre-laid out grid items.
+  * Add event / input listeners that wait for the correct combination of all properties to pass a level. 
+  * Reward the user with something flashy and a new level. 
 * Wrap up styling.
 
 
 
 # Bonus Features:
-* Build game feature that requires users to change the grid properties in order to achieve a certain given layout. (I.E. - "Use grid features to create a layout that has a navbar at the top that is 100% of the screen width, a main content feature that is 70% of the screen width, and a side bar that is 30% of the screen width." And the screen will provide 3 red boxes that turn green when the user has successfully created that grid.)
+* Add more game levels. 
