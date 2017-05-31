@@ -23,6 +23,8 @@ class Tutorial {
   }
 
   setUpTutorial () {
+    this.gridWrapper.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr'
+    this.gridWrapper.style.gridTemplateRows = '1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr'
     this.divs.forEach(div => {
       let element = document.createElement('div')
       element.id = div
