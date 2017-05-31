@@ -16,23 +16,11 @@ Bugs:
   * all 'enters' should be leave-focus or whatever
   * new grid items need to be content editable.
   * Handle resizing of the grid overlay
+  * footer has more options for success than others? 
 
 
-    let divName = input.id.split('-')[0].toUpperCase()
-    let selectedDiv = document.getElementById(divName)
+  Lessons:
+  1. moving items
+  2. overlay
+  3. justification and alignment
 
-    if (divName === 'HEADER') {
-      selectedDiv.style.gridColumn = input.value
-      selectedDiv.style.gridRow = input.value
-    }
-
-    // let header = document.getElementById('HEADER')
-    // let main = document.getElementById('MAIN')
-
-    // header.style.gridColumn = input.value
-    // header.style.gridRow = input.value
-
-    // let entry = input.value.replace(/\s/g, '').split(':')
-    //   if (entry[0] === 'grid-column') {
-    //   selectedDiv.style.gridColumn = entry[1]
-    // }

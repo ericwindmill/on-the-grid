@@ -136,17 +136,16 @@ class Tutorial {
         }
       })
     })
-    console.log(correctDivCount)
     if (correctDivCount === this.level1WinningScore) {
       this.nextLesson()
     }
   }
 
   nextLesson () {
-    console.log('here')
     let nav = document.createElement('div')
     nav.id = 'NAV'
     nav.className = `grid-item nav-tutorial`
+    nav.innerHTML = 'NAV'
     this.gridWrapper.appendChild(nav)
   }
 }
