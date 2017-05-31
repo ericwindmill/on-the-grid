@@ -67,6 +67,7 @@ body{
   border-radius: 5px;
   margin: 20px;
   min-width: 480px;
+  z-index: 1;
 }
 
 #playground-information, #tutorial-information {
@@ -108,14 +109,26 @@ body{
   grid-gap: 5px;
 }
 
-#overlay {
+#tutorial-overlay {
   visibility: hidden;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   background: none;
 }
 
-#overlay span {
+#tutorial-overlay span {
+  border: .5px dashed lightgrey;
+}
+
+#playground-overlay {
+  visibility: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  background: none;
+}
+
+#playground-overlay span {
   border: .5px dashed lightgrey;
 }
 
@@ -130,6 +143,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index:10;
 }
 
 #grid-item-span {

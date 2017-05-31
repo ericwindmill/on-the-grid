@@ -165,8 +165,8 @@ footer {
 
     <section class="display" id="wrapper" 
               style='
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
               '>
       <div id="display-grid-1" class="grid-item"><span id="grid-item-span" contenteditable="true">cuase</span></div>
       <div id="display-grid-2" class="grid-item"><span id="grid-item-span" contenteditable="true">I'm</span></div>
@@ -175,12 +175,21 @@ footer {
       <div id="display-grid-5" class="grid-item"><span id="grid-item-span" contenteditable="true">to</span></div>
       <div id="display-grid-6" class="grid-item"><span id="grid-item-span" contenteditable="true">Strawberry</span></div>
       <div id="display-grid-7" class="grid-item"><span id="grid-item-span" contenteditable="true">Fields</span></div>
-      <div id="display-grid-8" class="grid-item"><span id="grid-item-span" contenteditable="true">nothing</span></div>
-      <div id="display-grid-9" class="grid-item"><span id="grid-item-span" contenteditable="true">is</span></div>
-      <div id="display-grid-10" class="grid-item"><span id="grid-item-span" contenteditable="true">real</span></div>
     </section>
 
-    <section id='overlay' class='display-overlay'>
+    <section id='playground-overlay' class='display-overlay'>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+    </section>
+
+    <section id='tutorial-overlay' class='display-overlay'>
       <span class="grid-spot"></span>
       <span class="grid-spot"></span>
       <span class="grid-spot"></span>
@@ -284,7 +293,7 @@ footer {
     </section>
 
     <section id="playground-information">
-      <h1>Welcome to On the Grid! </h1><br />
+      <h1>Welcome to On the Grid! </h1><br /><h2 id="playground-toggle-button">Toggle Grid View</h2>
       Grid is the newest and most exciting layout tool in CSS3. Use it to play elements virtually anywhere on a webpage. 
       <ul>
         <li>fr - a new unit of measurement that stands for fraction, an fr will take up a fraction of the <em>remaining</em> space of its parent.

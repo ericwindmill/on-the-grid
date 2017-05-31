@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ======== "Global" vars ======== //
   const wrapper = document.getElementById('wrapper')
   const gridItems = document.querySelectorAll('#wrapper div')
+  const playgroundOverlay = document.getElementById('playground-overlay')
 
   // ======== Grid Items Color ======== //
   let nextColor = 100
@@ -10,32 +11,83 @@ document.addEventListener('DOMContentLoaded', () => {
     nextColor -= 2
   })
 
+  // ======== Toggle Overlay ======== //
+  const toggleButton = document.getElementById('playground-toggle-button')
+  toggleButton.addEventListener('click', function () {
+    if (playgroundOverlay.style.visibility === 'hidden') {
+      playgroundOverlay.style.visibility = 'visible'
+    } else {
+      playgroundOverlay.style.visibility = 'hidden'
+    }
+  })
+
   // ======== Inputs to change row / column numbers ======== //
-  let rowNum = 5  
+  let rowNum = 3 
+  let columnNum = 3 
   document.getElementById('add-row').onclick = () => {
     rowNum += 1
     wrapper.style.gridTemplateRows = '1fr '.repeat(rowNum)
+     // Add to grid overlay
+    playgroundOverlay.style.gridTemplateRows = '1fr '.repeat(rowNum)
+    for (let i = 1; i <= columnNum; i++) {
+      let overlayItem = document.createElement('SPAN')
+      overlayItem.className = 'grid-spot'
+      playgroundOverlay.appendChild(overlayItem)
+    }
   }
   document.getElementById('delete-row').onclick = () => {
     rowNum -= 1
     wrapper.style.gridTemplateRows = '1fr '.repeat(rowNum)
+    // Remove from grid overlay
+    playgroundOverlay.style.gridTemplateRows = '1fr '.repeat(rowNum)
+    for (let i = 1; i <= columnNum; i++) {
+      let overlayItem = playgroundOverlay.childNodes[i]
+      playgroundOverlay.removeChild(overlayItem)
+    }
   }
   document.getElementById('auto-row').onclick = () => {
-    rowNum = 5
+    rowNum = 3
     wrapper.style.gridTemplateRows = `auto`
+    playgroundOverlay.style.gridTemplateRows = `auto`
+    let spotsToRemove = playgroundOverlay.childElementCount - wrapper.childElementCount
+    if (playgroundOverlay.childElementCount > wrapper.childElementCount) {
+      for (let i = 1; i <= spotsToRemove; i++) {
+        let overlayItem = playgroundOverlay.childNodes[i]
+        playgroundOverlay.removeChild(overlayItem)
+      }
+    }
   }
-  let columnNum = 5
+  
   document.getElementById('add-column').onclick = () => {
     columnNum += 1
     wrapper.style.gridTemplateColumns = '1fr '.repeat(columnNum)
+    playgroundOverlay.style.gridTemplateColumns = '1fr '.repeat(columnNum)
+    for (let i = 1; i <= rowNum; i++) {
+      let overlayItem = document.createElement('SPAN')
+      overlayItem.className = 'grid-spot'
+      playgroundOverlay.appendChild(overlayItem)
+    }
   }
   document.getElementById('delete-column').onclick = () => {
     columnNum -= 1
     wrapper.style.gridTemplateColumns = '1fr '.repeat(columnNum)
+    playgroundOverlay.style.gridTemplateColumns = '1fr '.repeat(columnNum)
+    for (let i = 1; i <= rowNum; i++) {
+      let overlayItem = playgroundOverlay.childNodes[i]
+      playgroundOverlay.removeChild(overlayItem)
+    }
   }
   document.getElementById('auto-column').onclick = () => {
-    columnNum = 5
+    columnNum = 3
     wrapper.style.gridTemplateColumns = `auto`
+    playgroundOverlay.style.gridTemplateColumns = `auto`
+    let spotsToRemove = playgroundOverlay.childElementCount - wrapper.childElementCount
+    if (playgroundOverlay.childElementCount > wrapper.childElementCount) {
+      for (let i = 1; i <= spotsToRemove; i++) {
+        let overlayItem = playgroundOverlay.childNodes[i]
+        playgroundOverlay.removeChild(overlayItem)
+      }
+    }
   }
 
   // ======== Inputs to change row / column size ======== //
@@ -137,7 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ======== Select a Grid Item by Clicking ======== //
   let item;  
   let selectGridItem = e => {
-    console.log('here')
     item = e.target
     selectors()
     if (item.nodeName === 'DIV') {

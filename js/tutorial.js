@@ -30,7 +30,7 @@ class Tutorial {
   }
 
   setUpTutorial () {
-    let overlay = document.getElementById('overlay')
+    let overlay = document.getElementById('tutorial-overlay')
     overlay.style.display = 'grid'
     this.gridWrapper.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr'
     this.gridWrapper.style.gridTemplateRows = '1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr'
@@ -44,7 +44,7 @@ class Tutorial {
   }
 
   toggleGridView () {
-    let gridOverlay = document.getElementById('overlay')
+    let gridOverlay = document.getElementById('tutorial-overlay')
     if (gridOverlay.style.visibility === 'hidden') {
       gridOverlay.style.visibility = 'visible'
     } else {
