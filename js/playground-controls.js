@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
   // ======== "Global" vars ======== //
   const wrapper = document.getElementById('wrapper')
   const gridItems = document.querySelectorAll('#wrapper div')
@@ -138,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ======== Select a Grid Item by Clicking ======== //
   let item;  
   let selectGridItem = e => {
+    console.log('here')
     item = e.target
     selectors()
     if (item.nodeName === 'DIV') {
