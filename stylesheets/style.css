@@ -135,9 +135,9 @@ body{
 .grid-item{
   border-radius: 10px;
   color: black;
-  font-size: 1.5em;
+  font-size: 1.3em;
   text-align: center;
-  padding: auto;
+  margin: 3px;
   font-family: 'Quicksand', sans-serif;
   font-weight: 100;
   display: flex;
@@ -147,9 +147,10 @@ body{
 }
 
 #grid-item-span {
-  padding: 5px;
-  font-size: inherit;
+  padding: 15px;
+  font-size: 1em;
   vertical-align: middle;
+  overflow: hidden;
 }
 
 

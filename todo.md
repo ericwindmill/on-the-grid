@@ -4,17 +4,15 @@ Properties to manipulate:
   * align / justify content? 
  
 Ideas:
-  * make an overlay for main thing
-    * this wouldn't be too hard. Just make an overlay that 
-      updates the same way as the normal grid.
-  * style turtoial index items like actual browser things.
-  * style window like browser
+  * Make 'info' on main page reasonable 
+  * Make info on tutorial page better
   * add 'goal layout' to tutorial
+  * style window like browser
+  * style turtoial index items like actual browser things.
   
 Bugs:
   * blocks expand past grid if you type in too much text.
-  * all 'enters' should be leave-focus or whatever
-  * new grid items need to be content editable.
+    * this could be a feature: watch out! too much text will break the grid!
   * Handle resizing of the grid overlay
   * footer has more options for success than others? 
 

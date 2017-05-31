@@ -147,6 +147,9 @@ class Tutorial {
     nav.className = `grid-item nav-tutorial`
     nav.innerHTML = 'NAV'
     this.gridWrapper.appendChild(nav)
+
+    let text = document.getElementById('editor-text')
+    text.innerHTML += 'nav {<input />}'
   }
 }
 
