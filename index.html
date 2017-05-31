@@ -144,20 +144,20 @@
   grid-template-rows: repeat(10, 1fr)
 }
 header {
-  grid-column: <input class="sm-editor-input"/>
-  <input class="sm-editor-input"/>: 1
+  grid-column: <input id="header-col-input" class="sm-editor-input editor-inputs"/>
+  grid-row: <input id="header-row-input" class="sm-editor-input editor-inputs"/>
 }
 main {
-  <input class="lg-editor-input" />
-  <input class="lg-editor-input"/>
+  <input id='main-col-input' class="lg-editor-input editor-inputs" />
+  <input id='main-col-input' class="lg-editor-input editor-inputs"/>
 }
 aside {
-  <input class="lg-editor-input"/>
-  <input class="lg-editor-input"/>
+  <input id='aside-col-input' class="lg-editor-input editor-inputs"/>
+  <input id='aside-row-input' class="lg-editor-input editor-inputs"/>
 }
 footer {
-  <input class="lg-editor-input"/>
-  <input class="lg-editor-input"/>
+  <input id='footer-col-input' class="lg-editor-input editor-inputs"/>
+  <input id='footer-row-input' class="lg-editor-input editor-inputs"/>
 }
         </code>
       </div>
@@ -323,3 +323,14 @@ footer {
     </section>
   </body>
 </html>
+
+<!--
+  grid-column: 2/ 8
+grid-row: 3 / 10 
+
+grid-column: 8/ 10
+grid-row: 3 / 10 
+
+grid-column: 2 / 10
+grid-row: 10 / 11
+-->

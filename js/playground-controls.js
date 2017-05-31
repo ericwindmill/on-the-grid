@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ======== Toggle Overlay ======== //
   const toggleButton = document.getElementById('playground-toggle-button')
   toggleButton.addEventListener('click', function () {
-    if (playgroundOverlay.style.visibility === 'hidden') {
+    if (playgroundOverlay.style.visibility === 'hidden' || playgroundOverlay.style.visibility === '') {
       playgroundOverlay.style.visibility = 'visible'
     } else {
       playgroundOverlay.style.visibility = 'hidden'
@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
-  
   document.getElementById('add-column').onclick = () => {
     columnNum += 1
     wrapper.style.gridTemplateColumns = '1fr '.repeat(columnNum)
@@ -159,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ======== Buttons to change number of grid item ======== //
-  let gridNum = 10
+  let gridNum = 7
   const lyrics = ['and', 'nothing', 'to', 'get', 'hung', 'about', 'Strawberry', 'Fields', 'Forever',
                   'cause', "I'm", 'going', 'down', 'to', 'Strawberry', 'Fields', 'nothing', 'is', 'real'
                  ]
