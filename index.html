@@ -11,13 +11,11 @@
 
   </head>
   <body>
-
     <section id="user-input">
       <header id="main-head">
         <h1> On The Grid </h1>
         <h2> A CSS Grid Playground</h2>
       </header>
-
       <section class="grid-setup">
         <p class="ui-subhead"> grid setup </p>
         <div id="row-count-box">
@@ -37,7 +35,6 @@
           </code>
         </div>
       </section>
-
       <section class="wrapper-properties">
         <p class="ui-subhead"> .wrapper properties </p>
         <code id="resize-form"> 
@@ -59,13 +56,10 @@
             </span>
           </div>
         </code>
-
-
         <code>grid-auto-flow:
           <button id="flow-column-button">Column</button>
           <button id="flow-row-button">Row</button>
         </code>
-
         <div  id="gap-form">
           <code>grid-row-gap:
             <span data-tip="try 10px or 5%" class="tooltip">
@@ -76,7 +70,6 @@
             <input type="text" id="column-gap-user-input" placeholder="5px" /></span>
           </code>
         </div>
-
         <div id="alignment-selections">
           <code>justify-items:
             <select id="justify-select">
@@ -95,19 +88,10 @@
             </select>
           </code>
         </div>
-
       </section>
-
-      <!-- justify items changes position of all things, 
-           justify content justifies the content as a whole object --> 
-
-
-
       <section class="grid-item-properties">
         <p class="ui-subhead"> .grid-item properties </p>
         <p class="click-to-select"> (click grid item to select) </p>
-
-
         <div id="grid-item-location-form">
           <code>grid-column:
             <span data-tip="choose the start column" class="tooltip">
@@ -126,7 +110,6 @@
             </span>
           </code>
         </div>
-
         <div id="self-alignment-selections">
           <code>justify-self:
             <select id="justify-self-select">
@@ -146,7 +129,38 @@
           </code>
         </div>
       </section>
+    </section>
 
+    <section id="text-editor">
+      <header id="main-head">
+        <h1> On The Grid </h1>
+        <h2> Css Grid Tutorial</h2>
+      </header>
+      <div id='editor-form'> 
+        <div class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22</br>23</div>
+        <pre id="editor-text"><code>body {
+  display: grid
+  grid-template-columns: repeat(10, 1fr)
+  grid-template-rows: repeat(10, 1fr)
+}
+header {
+  grid-column: <input class="sm-editor-input"/>
+  <input class="sm-editor-input"/>: 1
+}
+main {
+  <input class="lg-editor-input" />
+  <input class="lg-editor-input"/>
+}
+aside {
+  <input class="lg-editor-input"/>
+  <input class="lg-editor-input"/>
+}
+footer {
+  <input class="lg-editor-input"/>
+  <input class="lg-editor-input"/>
+}
+        </code>
+      </div>
     </section>
 
     <section class="display" id="wrapper" 
@@ -166,7 +180,110 @@
       <div id="display-grid-10" class="grid-item"><span id="grid-item-span" contenteditable="true">real</span></div>
     </section>
 
-    <section id="information">
+    <section id='overlay' class='display-overlay'>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+            <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+            <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+            <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+            <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+            <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+            <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+            <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+            <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+            <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+      <span class="grid-spot"></span>
+    </section>
+
+    <section id="playground-information">
       <h1>Welcome to On the Grid! </h1><br />
       Grid is the newest and most exciting layout tool in CSS3. Use it to play elements virtually anywhere on a webpage. 
       <ul>
@@ -180,14 +297,20 @@
       </span>
     </section>
 
-    <section id="text-editor">
-      <header id="main-head">
-        <h1> On The Grid </h1>
-        <h2> Css Grid Tutorial</h2>
-      </header>
-      <div id='editor-form'>
-      </div>
-    </section>
+    <section id="tutorial-information">
+      <h1 class='info-h1'>TutorialTime</h1><h2 id="toggle-button">Toggle Grid View</h2>
+      <br />
+      <h2> ACCKKK! Who designed this website? </h2>
+      <h3> They obviously don't know how easy it is to layout a website using CSS Grid!</h3>
+      <p> 
+        Use the text editor on the left to fix the layout. The most important part of grid is 
+        laying items on the grid using 'grid-rows' and 'grid-columns'. 
 
+        You'll only need to change the grid row/column numbers to layout this website.
+      </p>
+
+      <a href="/Users/eric/Desktop/on_the_grid/index.html">BACK TO THE HOME</a>
+
+    </section>
   </body>
 </html>

@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
   // ======== "Global" vars ======== //
   const wrapper = document.getElementById('wrapper')
   const gridItems = document.querySelectorAll('#wrapper div')
@@ -12,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   // ======== Inputs to change row / column numbers ======== //
-  let rowNum = 5
+  let rowNum = 5  
   document.getElementById('add-row').onclick = () => {
     rowNum += 1
     wrapper.style.gridTemplateRows = '1fr '.repeat(rowNum)
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     rowNum = 5
     wrapper.style.gridTemplateRows = `auto`
   }
-
   let columnNum = 5
   document.getElementById('add-column').onclick = () => {
     columnNum += 1
@@ -191,12 +189,5 @@ document.addEventListener('DOMContentLoaded', () => {
   alignSelf.onchange = () => {
     item.style.alignSelf = alignSelf.value
   }
-
-
-// ======== Begin Tutorial ====== //
-
-
-
-
 })
 

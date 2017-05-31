@@ -25,6 +25,9 @@ h2 {
   vertical-align: middle;
 }
 
+pre {
+  margin: 0
+}
 
 /*============================*
     Top Level Grid
@@ -55,21 +58,32 @@ body{
   border-radius: 5px;
   margin: 20px;
   min-width: 480px;
-
 }
 
-#information {
+.display-overlay {
   grid-column: 2;
+  grid-row: 1 ;
+  padding: 30px;
+  border-radius: 5px;
   margin: 20px;
-  padding: 20px;
+  min-width: 480px;
+}
+
+#playground-information, #tutorial-information {
+  grid-column: 2;
+  padding: 0 20px;
   font-family: 'Quicksand', serif;
   font-weight: 300;
+}
+
+#tutorial-information {
+  visibility: hidden;
+  position: absolute;
 }
 
 #text-editor {
   visibility: hidden;
   position: absolute;
-  z-index: -1;
   grid-column: 1;
   grid-row: 1 / 3;
   display: flex;
@@ -81,7 +95,7 @@ body{
   background-color: dimgray;
   border-radius: 5px;
   margin: 0 20px 20px 20px;
-  padding: 20px;
+  padding: 10px;
   align-self: stretch;
   height: 100%;
   margin: 20px;
@@ -92,6 +106,17 @@ body{
 #wrapper {
   display: grid;
   grid-gap: 5px;
+}
+
+#overlay {
+  visibility: hidden;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  background: none;
+}
+
+#overlay span {
+  border: .5px dashed lightgrey;
 }
 
 .grid-item{
@@ -254,6 +279,17 @@ input:focus {
 /*============================*
     INFORMATION BOX STYLES
 *============================*/
+.info-h1{
+  border-bottom: 1px black solid;
+  display: inline-block;
+}
+
+#toggle-button{
+  display:inline-block;
+  color: hsl(336, 100%, 35%);
+  border-bottom: solid 1px hsl(336, 100%, 35%);
+}
+
 .tutorial-link {
   display: flex;
   flex-direction: row;
@@ -280,25 +316,63 @@ input:focus {
 *============================*/
 
 .header-tutorial {
-  background-color: green;
+  background-color: hsl(336, 100%, 45%);
   grid-column: 1 / 8;
   grid-row: 8 / 10;
 }
 
 .main-tutorial {
-  background-color: blue;
+  background-color: hsl(336, 100%, 55%);
   grid-column: 6 / 11;
   grid-row: 4 / 11;
 }
 
 .aside-tutorial {
-  background-color: red;
+  background-color: hsl(336, 100%, 35%);
   grid-column: 2 / 5;
   grid-row: 2 / 9;
 }
 
 .footer-tutorial {
-  background-color: orange;
+  background-color: hsl(336, 100%, 65%);
   grid-column: 3 / 11;
   grid-row: 1;
+}
+
+#editor-form {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+.line-numbers {
+  text-align:right;
+  width: 20px;
+  color: grey;
+  font-family: monospace;
+  font-size: 1em;
+  line-height: 1.7em;
+  padding-right: 10px;
+}
+
+#editor-text {
+  width: 370px;
+  line-height: 1.7em;
+  color: white;
+}
+
+#editor-text input {
+  padding: 2px;;
+  margin: 0;
+  border-radius: 0;
+  
+  background: dimgray;
+  border: .5px solid lightgrey;
+  color: white;
+}
+
+.sm-editor-input {
+  width: 100px;
+}
+.lg-editor-input {
+  width: 200px;
 }

@@ -1,32 +1,17 @@
 Properties to manipulate:
-
-  
-  These could be worked intot he example
-  *incluce minmax?
-  *include auto-fill / auto-fit?
-  *align / justify content? 
+  * incluce minmax?
+  * include auto-fill / auto-fit?
+  * align / justify content? 
  
-
-  ideas:
-  *style window like browser
-
+Ideas:
+  * style window like browser
+  * style turtoial index items like actual browser things.
+  * make an overlay for main thing
+    * this wouldn't be too hard. Just make an overlay that 
+      updates the same way as the normal grid.
+  * new grid items need to be content editable.
   
-
-  bugs:
-  'undefined' after too many blocks
-  when removing blocks, color doesn't revert correctly
-  blocks expand past grid if you type in too much text.
-
-  done:
-  *grid auto flow
-  *grid gap
-  *changing number of columns / rows (specific number or auto)
-  *resizing columns / rows INDIVIDUALLY
-  *aligning / justifying items
-  *adding new grid items
-  *removing grid items
-  *I'll need a way to select grid items.
-    *resizing griditems as in (grid-row: a / b)
-  *aligning / justifying self
-  * content editable!
-    *style the boxes out!
+Bugs:
+  * blocks expand past grid if you type in too much text.
+  * all 'enters' should be leave-focus or whatever
+  * new grid items need to be content editable.
