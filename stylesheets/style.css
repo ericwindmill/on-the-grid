@@ -75,7 +75,10 @@ body{
   padding: 0 20px;
   font-family: 'Quicksand', serif;
   font-weight: 300;
+  position: relative;
 }
+
+#playground-information {}
 
 #tutorial-information {
   visibility: hidden;
@@ -306,9 +309,13 @@ input:focus {
 }
 
 .tutorial-link {
+  position: absolute;
+  top: 70%;
+  left: 75%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  width: 500px;
 }
 
 .tutorial-link p {
@@ -318,13 +325,38 @@ input:focus {
 }
 
 #begin-tutorial-link {
-  color: hsl(336, 100%, 35%);
   border-bottom: solid 1px hsl(336, 100%, 35%);
+  background-color: hsl(336, 100%, 95%);
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
 }
 
 #begin-tutorial-link:hover {
   cursor: pointer;
   color: hsl(336, 100%, 45%);
+}
+
+#playground-toggle-button {
+  position: absolute;
+  top: -7%;
+  left: 75%;
+  background-color: hsl(336, 100%, 95%);
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 1em;
+}
+
+#playground-toggle-button:hover {
+  background-color: hsl(336, 100%, 90%);
+}
+
+#playground-toggle-button:active {
+  background-color: hsl(336, 100%, 90%);
+  padding: 4px;
 }
 /*============================*
     TUTORIAL STYLES
