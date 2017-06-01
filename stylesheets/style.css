@@ -310,11 +310,12 @@ input:focus {
 
 .tutorial-link {
   position: absolute;
-  top: 70%;
-  left: 75%;
+  bottom: 5%;
+  right: 5%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   width: 500px;
 }
 
@@ -322,10 +323,10 @@ input:focus {
   font-weight: 300;
   font-family: 'Quicksand', serif;
   font-size: 1.3em;
+  padding-right: 2px;
 }
 
 #begin-tutorial-link {
-  border-bottom: solid 1px hsl(336, 100%, 35%);
   background-color: hsl(336, 100%, 95%);
   border: 1px solid lightgrey;
   border-radius: 5px;
@@ -335,19 +336,24 @@ input:focus {
 
 #begin-tutorial-link:hover {
   cursor: pointer;
-  color: hsl(336, 100%, 45%);
+  background-color: hsl(336, 100%, 90%);
+}
+
+#begin-tutorial-link:active {
+  padding: 4px;
 }
 
 #playground-toggle-button {
   position: absolute;
-  top: -7%;
-  left: 75%;
+  top: -15%;
+  left: 80%;
   background-color: hsl(336, 100%, 95%);
   border: 1px solid lightgrey;
   border-radius: 5px;
   cursor: pointer;
   padding: 5px;
   font-size: 1em;
+  z-index: 10;
 }
 
 #playground-toggle-button:hover {
@@ -358,6 +364,30 @@ input:focus {
   background-color: hsl(336, 100%, 90%);
   padding: 4px;
 }
+
+#code-output-button {
+  position: absolute;
+  top: -15%;
+  left: 65%;
+  background-color: hsl(336, 100%, 95%);
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 1em;
+  z-index: 10;
+}
+
+#code-output-button:hover {
+  background-color: hsl(336, 100%, 90%);
+}
+
+#code-outpu-button:active {
+  background-color: hsl(336, 100%, 90%);
+  padding: 4px;
+}
+
+
 /*============================*
     TUTORIAL STYLES
 *============================*/

@@ -292,18 +292,31 @@ footer {
     </section>
 
     <section id="playground-information">
-      <h1>Welcome to On the Grid! </h1><br /><h2 id="playground-toggle-button">Toggle Grid View</h2>
-      Grid is the newest and most exciting layout tool in CSS3. Use it to play elements virtually anywhere on a webpage. 
-      <ul>
+      <h1>Welcome to On the Grid! </h1>
+      <h2>It's never been so easy to make beautiful layouts using pure CSS.</h2><br />
+       CSS Grid is a 2D layout tool that allows you to establish a grid on your webpage and position HTML elements virtually anywhere on that grid. As of March 2017, the Grid property is supported by all majour browsers. Go ahead and give it a try!
+      <!--<ul>
+        <li></li>
         <li>fr - a new unit of measurement that stands for fraction, an fr will take up a fraction of the <em>remaining</em> space of its parent.
         For example: "400px 2fr 1fr"</li>
         <li>try minmax(min, max) for column and row sizes!</li>
         <li>when establishing grid-template-columns or grid-template-rows, try auto-fill</li>
-      </ul>
+      </ul>-->
+      <h2 id="playground-toggle-button">Toggle Grid View</h2>
+      <span id="code-output-button">See the Code</span>
       <span class="tutorial-link">
-       <p>Does this look like gibberrish?</p><p id="begin-tutorial-link">Go to the tutorial!</p>
+       <p>Does this look like gibberrish?</p><p id="begin-tutorial-link">Go to the Grid tutorial!</p>
       </span>
     </section>
+
+    <section class='see-the-code-popup'>
+      <pre id="editor-text"><code>body {
+        display: grid
+        grid-template-columns: repeat(10, 1fr)
+        grid-template-rows: repeat(10, 1fr)
+      }
+      </code>
+    </section> 
 
     <section id="tutorial-information">
       <h1 class='info-h1'>TutorialTime</h1><h2 id="toggle-button">Toggle Grid View</h2>
