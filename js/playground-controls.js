@@ -220,5 +220,55 @@ document.addEventListener('DOMContentLoaded', () => {
   alignSelf.onchange = () => {
     item.style.alignSelf = alignSelf.value
   }
-})
 
+
+  // ======== See the Code Modal ======== //
+  const seeTheCodeButton = document.getElementById('code-output-button')
+  const seeTheCode = document.getElementById('see-the-code-popup')
+  const mask = document.getElementById('page-mask')
+
+  // Properties to Populate
+  const modalTemplateRows = document.getElementById('modal-template-rows')
+  const modalTemplateColumns = document.getElementById('modal-template-columns')
+  const modalAutoFlow = document.getElementById('modal-auto-flow')
+  const modalColumnGap = document.getElementById('modal-column-gap')
+  const modalRowGap = document.getElementById('modal-row-gap')
+  const modalJustify = document.getElementById('modal-justify')
+  const modalAlign = document.getElementById('modal-align')
+
+  seeTheCodeButton.addEventListener('click', () => {
+    // Show the modal and mask
+    seeTheCode.style.visibility = 'visible'
+    seeTheCode.style.zIndex = 100
+    seeTheCode.style.opacity = 1
+    mask.style.visibility = 'visible'
+    mask.style.zIndex = 99
+    mask.style.opacity = 1
+
+    // Populate each property everytime the modal is shown
+    modalTemplateColumns.innerHTML = wrapper.style.gridTemplateColumns
+    modalTemplateRows.innerHTML = wrapper.style.gridTemplateRows
+    modalAutoFlow.innerHTML = wrapper.style.gridAutoFlow
+    modalRowGap.innerHTML = wrapper.style.gridRowGap
+    modalColumnGap.innerHTML = wrapper.style.gridColumnGap
+    modalJustify.innerHTML = wrapper.style.justifyItems
+    modalAlign.innerHTML = wrapper.style.alignItems
+  })
+
+  mask.addEventListener('click', () => {
+    if (mask.style.visibility === 'visible') {
+      mask.style.visibility = 'hidden'
+      mask.style.zIndex = -1
+      mask.style.opacity = 0
+      seeTheCode.style.visibility = 'hidden'
+      seeTheCode.style.opacity = 0
+      seeTheCode.style.zIndex = -1
+    }
+  })
+
+  // ======== Populate See the Code Modal ======== //
+
+  
+  
+
+})

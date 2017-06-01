@@ -138,26 +138,26 @@
       </header>
       <div id='editor-form'> 
         <div class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22</br>23</div>
-        <pre id="editor-text"><code>body {
+        <pre class="editor-text"><code>body {
   display: grid
   grid-template-columns: repeat(10, 1fr)
   grid-template-rows: repeat(10, 1fr)
 }
 header {
-  grid-column: <input id="header-col-input" class="sm-editor-input editor-inputs"/>
-  grid-row: <input id="header-row-input" class="sm-editor-input editor-inputs"/>
+  grid-column: <input id="header-col-input" class="sm-editor-input editor-inputs" value='2 / 10'/>
+  grid-row: <input id="header-row-input" class="sm-editor-input editor-inputs" value='1 / 3'/>
 }
 main {
-  <input id='main-col-input' class="lg-editor-input editor-inputs" />
-  <input id='main-col-input' class="lg-editor-input editor-inputs"/>
+  <input id='main-col-input' class="lg-editor-input editor-inputs" value='grid-column: 2/ 8' />
+  <input id='main-col-input' class="lg-editor-input editor-inputs" value='grid-row: 3 / 10 '/>
 }
 aside {
-  <input id='aside-col-input' class="lg-editor-input editor-inputs"/>
-  <input id='aside-row-input' class="lg-editor-input editor-inputs"/>
+  <input id='aside-col-input' class="lg-editor-input editor-inputs" value='grid-column: 8/ 10'/>
+  <input id='aside-row-input' class="lg-editor-input editor-inputs" value='grid-row: 3 / 10 '/>
 }
 footer {
-  <input id='footer-col-input' class="lg-editor-input editor-inputs"/>
-  <input id='footer-row-input' class="lg-editor-input editor-inputs"/>
+  <input id='footer-col-input' class="lg-editor-input editor-inputs" value='grid-column: 2 / 10'/>
+  <input id='footer-row-input' class="lg-editor-input editor-inputs" value='grid-row: 10 / 11'/>
 }</code>
       </div>
     </section>
@@ -166,6 +166,10 @@ footer {
               style='
                 grid-template-columns: 1fr 1fr 1fr;
                 grid-template-rows: 1fr 1fr 1fr;
+                grid-auto-flow: row;
+                grid-gap: 5px 5px;
+                justify-items: stretch;
+                align-items: stretch;
               '>
       <div id="display-grid-1" class="grid-item"><span id="grid-item-span" contenteditable="true">cuase</span></div>
       <div id="display-grid-2" class="grid-item"><span id="grid-item-span" contenteditable="true">I'm</span></div>
@@ -294,7 +298,8 @@ footer {
     <section id="playground-information">
       <h1>Welcome to On the Grid! </h1>
       <h2>It's never been so easy to make beautiful layouts using pure CSS.</h2><br />
-       CSS Grid is a 2D layout tool that allows you to establish a grid on your webpage and position HTML elements virtually anywhere on that grid. As of March 2017, the Grid property is supported by all majour browsers. Go ahead and give it a try!
+       CSS Grid brings 2D layouting to the web! Establish a grid on your whole site or a section, and position the inner elements anywhere!<br><br>
+       As of March 2017, CSS grid is supported by all major browsers.
       <!--<ul>
         <li></li>
         <li>fr - a new unit of measurement that stands for fraction, an fr will take up a fraction of the <em>remaining</em> space of its parent.
@@ -309,14 +314,27 @@ footer {
       </span>
     </section>
 
-    <section class='see-the-code-popup'>
-      <pre id="editor-text"><code>body {
+    <section id='see-the-code-popup'>
+       <div class="modal-line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16</div>
+      <pre class="modal-text"><code>.wrapper {
         display: grid
-        grid-template-columns: repeat(10, 1fr)
-        grid-template-rows: repeat(10, 1fr)
+        grid-template-columns: <span id='modal-template-columns'></span>
+        grid-template-rows: <span id='modal-template-rows'></span>
+        grid-auto-flow: <span id='modal-auto-flow'></span>
+        grid-gap: <span id='modal-row-gap'></span>&nbsp;<span id='modal-column-gap'></span>
+        justify-items: <span id='modal-justify'></span>
+        align-items: <span id='modal-align'></span>
+      }
+
+.grid-item {
+        grid-row: < row-start > / < row-end >
+        grid-column: < column-start > / < column-end >
+        align-self: < stretch / start / end / center >
+        justify-self: < stretch / start / end / center >
       }
       </code>
     </section> 
+    <div id="page-mask"></div>
 
     <section id="tutorial-information">
       <h1 class='info-h1'>TutorialTime</h1><h2 id="toggle-button">Toggle Grid View</h2>
@@ -333,6 +351,8 @@ footer {
       <a href="/Users/eric/Desktop/on_the_grid/index.html">BACK TO THE HOME</a>
 
     </section>
+
+
   </body>
 </html>
 
