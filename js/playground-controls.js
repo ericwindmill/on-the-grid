@@ -96,10 +96,12 @@ document.addEventListener('DOMContentLoaded', () => {
   resizeRowNum.onchange = e => {
     currentRows[parseInt(resizeRowNum.value) - 1] = resizeRowSize.value
     wrapper.style.gridTemplateRows = currentRows.join(' ')
+    playgroundOverlay.style.gridTemplateRows = currentRows.join(' ')
   }
   resizeRowSize.onchange = e => {
     currentRows[parseInt(resizeRowNum.value) - 1] = resizeRowSize.value
     wrapper.style.gridTemplateRows = currentRows.join(' ')
+    playgroundOverlay.style.gridTemplateRows = currentRows.join(' ')
   }
 
   const resizeColumnNum = document.getElementById('column-num-input')
@@ -108,10 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
   resizeColumnNum.onchange = e => {
     currentColumns[parseInt(resizeColumnNum.value) - 1] = resizeColumnSize.value
     wrapper.style.gridTemplateColumns = currentColumns.join(' ')
+    playgroundOverlay.style.gridTemplateColumns = currentColumns.join(' ')
   }
   resizeColumnSize.onchange = e => {
     currentColumns[parseInt(resizeColumnNum.value) - 1] = resizeColumnSize.value
     wrapper.style.gridTemplateColumns = currentColumns.join(' ')
+    playgroundOverlay.style.gridTemplateColumns = currentColumns.join(' ')
   }
 
   // ======== Inputs to change grid gap ======== //
@@ -127,11 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========  Buttons to change grid auto flow ======== //
   document.getElementById('flow-column-button').onclick = () => {
     wrapper.style.gridAutoFlow = 'column'
-    // document.getElementById('grid-auto').innerHTML += ' column'
+    playgroundOverlay.style.gridAutoFlow = 'column'
   }
   document.getElementById('flow-row-button').onclick = () => {
     wrapper.style.gridAutoFlow = 'row'
-    // document.getElementById('grid-auto').innerHTML = 'grid-auto-flow: row'
+    playgroundOverlay.style.gridAutoFlow = 'row'
   }
 
   // ========  Buttons to change justification and alignment ======== //

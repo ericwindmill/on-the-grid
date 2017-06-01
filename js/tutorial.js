@@ -16,7 +16,6 @@ const level1TargetLocations = {
     'grid-row': ['10 / 11', '10 / span 1']
   }
 }
-
 const level2TargetLocations = {
   'HEADER': {
     'grid-column': ['2 / 10', '2 / span 8'],
@@ -40,15 +39,76 @@ const level2TargetLocations = {
   }
 }
 
+const levelTargetLocations = {
+  1: {
+    'HEADER': {
+      'grid-column': ['2 / 10', '2 / span 8'],
+      'grid-row': ['1 / 3', '1 / span 2']
+    },
+    'MAIN': {
+      'grid-column': ['2 / 8', '2 / span 6'],
+      'grid-row': ['3 / 10', '3 / span 7']
+    },
+    'ASIDE': {
+      'grid-column': ['8 / 10', '8 / span 2'],
+      'grid-row': ['3 / 10', '3 / span 7']
+    },
+    'FOOTER': {
+      'grid-column': ['2 / 10', '2 / span 8'],
+      'grid-row': ['10 / 11', '10 / span 1']
+    }
+  },
+  2: {
+    'HEADER': {
+      'grid-column': ['2 / 10', '2 / span 8'],
+      'grid-row': ['1 / 3', '1 / span 2']
+    },
+    'MAIN': {
+      'grid-column': ['2 / 8', '2 / span 6'],
+      'grid-row': ['3 / 10', '3 / span 7']
+    },
+    'ASIDE': {
+      'grid-column': ['8 / 10', '8 / span 2'],
+      'grid-row': ['3 / 10', '3 / span 7']
+    },
+    'FOOTER': {
+      'grid-column': ['2 / 10', '2 / span 8'],
+      'grid-row': ['10 / 11', '10 / span 1']
+    },
+    'NAV': {
+      'grid-column': ['3 / 9', '3 / span 6'],
+      'grid-row': ['2 / 3', '2 / span 3']
+    }
+  }
+}
+
+
+
 class Tutorial {
   constructor () {
     this.gridWrapper = document.getElementById('wrapper')
     this.divs = ['HEADER', 'MAIN', 'ASIDE', 'FOOTER']
     this.level1TargetLocations = level1TargetLocations
+    this.currentLesson = 1
+    this.winningScores = {
+      1: 8,
+      2: 10
+    }
     this.level1WinningScore = 8
     this.level2WinningScore = 10
+
   }
 
+  toggleGridView () {
+    let gridOverlay = document.getElementById('tutorial-overlay')
+    if (gridOverlay.style.visibility === 'hidden' || gridOverlay.style.visibility === '') {
+      gridOverlay.style.visibility = 'visible'
+    } else {
+      gridOverlay.style.visibility = 'hidden'
+    }
+  }
+
+  // Clears the components from the playground and loads the base components for the tutorial.
   beginTutorial () {
     let currentGrid = document.querySelectorAll('#wrapper div')
     currentGrid.forEach(item => {
@@ -77,27 +137,24 @@ class Tutorial {
     playgroundOverlay.style.position = 'relative'
   }
 
+  // sets up everything for lesson 1 of the tutorial
   setUpTutorial () {
-    let overlay = document.getElementById('tutorial-overlay')
-    overlay.style.display = 'grid'
     this.gridWrapper.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr'
     this.gridWrapper.style.gridTemplateRows = '1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr'
     this.divs.forEach(div => {
       let element = document.createElement('div')
+      let targetElement = document.createElement('div')
       element.id = div
+      targetElement.id = `overlay-${div}`
       element.innerHTML = div
+      targetElement.innerHTML = `put ${div} here`
       element.className = `grid-item ${div.toLowerCase()}-tutorial`
+      targetElement.className = `grid-item ${div.toLowerCase()}-overlay`
+      targetElement.style.zIndex = 1
+      targetElement.style.zIndex = 2
       this.gridWrapper.appendChild(element)
+      this.gridWrapper.appendChild(targetElement)
     })
-  }
-
-  toggleGridView () {
-    let gridOverlay = document.getElementById('tutorial-overlay')
-    if (gridOverlay.style.visibility === 'hidden' || gridOverlay.style.visibility === '') {
-      gridOverlay.style.visibility = 'visible'
-    } else {
-      gridOverlay.style.visibility = 'hidden'
-    }
   }
 
   handleInputs (input) {
@@ -117,16 +174,30 @@ class Tutorial {
         selectedDiv.style.gridRow = entry[1]
       } else {}
     }
-    this.checkWon(selectedDiv)
+    this.checkWon()
   }
 
+  formatCSSpropsForJS (property) {
+    let prop = property.split('-')
+    var formatted = [prop[0]]
+    for (var i = 1; i < prop.length; i++) {
+      formatted.push(prop[i].charAt(0).toUpperCase() + prop[i].slice(1))
+    }
 
-  checkWon (selectedDiv) {
+    return formatted.join('')
+  }
+  // I need to pass in informaion, such as the level winning score.
+  checkWon () {
     let correctDivCount = 0
     this.divs.forEach(element => {
       let div = document.getElementById(element)
-      Object.entries(this.level1TargetLocations).forEach(([k, v]) => {
+      Object.entries(levelTargetLocations[this.currentLesson]).forEach(([k, v]) => {
         if (k === div.id) {
+          // let jsProperties = []
+          // Object.keys(v).forEach(property => {
+          //   jsProperties.push(this.formatCSSpropsForJS(property))
+          // })
+
           if (div.style.gridColumn === v['grid-column'][0] || div.style.gridColumn === v['grid-column'][1]) {
             correctDivCount += 1
           }
@@ -136,20 +207,21 @@ class Tutorial {
         }
       })
     })
-    if (correctDivCount === this.level1WinningScore) {
+    if (correctDivCount === this.winningScores[this.currentLesson]) {
       this.nextLesson()
     }
   }
 
+  // here is where I should pass in a new lesson
   nextLesson () {
+    document.getElementById('lesson-1-copy').innerHTML = "<h1>Frantastic Grid Work!<h1><br><br><h2> Now check out how easy it is to overlay items!</h2><br>Grid items can easily be laid over other items, so long as they're established later in the HTML. Test it it out by putting that Nav Bar where it belongs."
+    document.getElementById('tutorial-editor-nav').style.visibility = 'visible'
     let nav = document.createElement('div')
     nav.id = 'NAV'
     nav.className = `grid-item nav-tutorial`
     nav.innerHTML = 'NAV'
+    
     this.gridWrapper.appendChild(nav)
-
-    let text = document.getElementById('editor-text')
-    text.innerHTML += 'nav {<input />}'
   }
 }
 
@@ -160,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tutorial.beginTutorial()
   })
 
-  let toggleButton = document.getElementById('toggle-button')
+  let toggleButton = document.getElementById('tutorial-toggle-button')
   toggleButton.addEventListener('click', () => {
     tutorial.toggleGridView()
   })

@@ -137,8 +137,8 @@
         <h2> Css Grid Tutorial</h2>
       </header>
       <div id='editor-form'> 
-        <div class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22</br>23</div>
-        <pre class="editor-text"><code>body {
+        <div class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30</div>
+        <pre id="editor-text"><code>body {
   display: grid
   grid-template-columns: repeat(10, 1fr)
   grid-template-rows: repeat(10, 1fr)
@@ -158,6 +158,10 @@ aside {
 footer {
   <input id='footer-col-input' class="lg-editor-input editor-inputs" value='grid-column: 2 / 10'/>
   <input id='footer-row-input' class="lg-editor-input editor-inputs" value='grid-row: 10 / 11'/>
+}</code><code id='tutorial-editor-nav'>
+nav {
+  <input id='nav-col-input' class="lg-editor-input editor-inputs" value=''/>
+  <input id='nav-row-input' class="lg-editor-input editor-inputs" value=''/>
 }</code>
       </div>
     </section>
@@ -180,7 +184,14 @@ footer {
       <div id="display-grid-7" class="grid-item"><span id="grid-item-span" contenteditable="true">Fields</span></div>
     </section>
 
-    <section id='playground-overlay' class='display-overlay'>
+    <section id='playground-overlay' class='display-overlay'
+      style = "
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-auto-flow: row;
+        justify-items: stretch;
+        align-items: stretch;"
+    >
       <span class="grid-spot"></span>
       <span class="grid-spot"></span>
       <span class="grid-spot"></span>
@@ -316,53 +327,41 @@ footer {
 
     <section id='see-the-code-popup'>
        <div class="modal-line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16</div>
-      <pre class="modal-text"><code>.wrapper {
-        display: grid
-        grid-template-columns: <span id='modal-template-columns'></span>
-        grid-template-rows: <span id='modal-template-rows'></span>
-        grid-auto-flow: <span id='modal-auto-flow'></span>
-        grid-gap: <span id='modal-row-gap'></span>&nbsp;<span id='modal-column-gap'></span>
-        justify-items: <span id='modal-justify'></span>
-        align-items: <span id='modal-align'></span>
-      }
+        <pre class="modal-text"><code>.wrapper {
+          display: grid
+          grid-template-columns: <span id='modal-template-columns'></span>
+          grid-template-rows: <span id='modal-template-rows'></span>
+          grid-auto-flow: <span id='modal-auto-flow'></span>
+          grid-gap: <span id='modal-row-gap'></span>&nbsp;<span id='modal-column-gap'></span>
+          justify-items: <span id='modal-justify'></span>
+          align-items: <span id='modal-align'></span>
+        }
 
-.grid-item {
-        grid-row: < row-start > / < row-end >
-        grid-column: < column-start > / < column-end >
-        align-self: < stretch / start / end / center >
-        justify-self: < stretch / start / end / center >
-      }
-      </code>
+  .grid-item {
+          grid-row: < row-start > / < row-end >
+          grid-column: < column-start > / < column-end >
+          align-self: < stretch / start / end / center >
+          justify-self: < stretch / start / end / center >
+        }
+        </code>
     </section> 
     <div id="page-mask"></div>
 
     <section id="tutorial-information">
-      <h1 class='info-h1'>TutorialTime</h1><h2 id="toggle-button">Toggle Grid View</h2>
-      <br />
-      <h2> ACCKKK! Who designed this website? </h2>
-      <h3> They obviously don't know how easy it is to layout a website using CSS Grid!</h3>
-      <p> 
-        Use the text editor on the left to fix the layout. The most important part of grid is 
-        laying items on the grid using 'grid-rows' and 'grid-columns'. 
+      <div id='lesson-1-copy'>
+        <h1> ACCKKK! Who designed this website? </h1><br /><br />
+        <h2> They obviously don't know how easy it is to layout a website using CSS Grid!</h2>
+        <br>
+          Use the text editor on the left to fix the layout. The most important part of grid is 
+          laying items on the grid using 'grid-rows' and 'grid-columns'. 
 
-        You'll only need to change the grid row/column numbers to layout this website.
-      </p>
-
-      <a href="/Users/eric/Desktop/on_the_grid/index.html">BACK TO THE HOME</a>
-
+          You'll only need to change the grid row/column numbers to layout this website.
+      </div>
+      <h2 id="tutorial-toggle-button">Toggle Grid View</h2>
+      <span class="playground-link">
+        <p id="back-home-link"><a href="/Users/eric/Desktop/on_the_grid/index.html">Back to the Playground!</a></p>
+      </span>
     </section>
-
 
   </body>
 </html>
-
-<!--
-  grid-column: 2/ 8
-grid-row: 3 / 10 
-
-grid-column: 8/ 10
-grid-row: 3 / 10 
-
-grid-column: 2 / 10
-grid-row: 10 / 11
--->
