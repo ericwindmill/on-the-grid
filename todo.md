@@ -9,8 +9,7 @@ Bugs:
  
 
 Todos: 
-  * README!
-  * update 'see the code' to include 'content
+  * update 'see the code' to include 'content'
 
 
   Lessons:
