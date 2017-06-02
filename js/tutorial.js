@@ -2,6 +2,7 @@ const lessons = {
   2: {
     'lesson-copy': "<h1>Frantastic Grid Work!<h1><h2> Now check out how easy it is to overlay items!</h2><br>Grid items can easily be laid over other items, so long as they're established later in the HTML. Test it it out by putting that Nav Bar where it belongs.",
     'lesson-editor-text-id': 'lesson-2-editor',
+    'lesson-datatip': "grid-column is short hand for grid-column-start / grid-column-end. It takes two inputs like so: ' x / y'.&#010; &#010; Bonus: You can try '1 / span 2' rather than '1 / 3'.'",
     'delete-divs': [],
     'new-divs': [
       {
@@ -19,6 +20,7 @@ const lessons = {
   3: {
     'lesson-copy': "<h1>Resizing Grid Items<h1><h2>Resizing is one of the most powerful concepts of grid.</h2><br>Simply the change the items column or row start/end locations and the items will stretch or shrink to fill up that space!<br><br> What if the content in the side bar is super important? Lets give it and the main section equal width using grid-column!",
     'lesson-editor-text-id': 'lesson-3-editor',
+    'lesson-datatip': "grid-column is short hand for grid-column-start / grid-column-end. It takes two inputs like so: ' x / y'.&#010; &#010; Bonus: You can try '1 / span 2' rather than '1 / 3'.'",
     'delete-divs': ['MAIN', 'overlay-MAIN', 'ASIDE', 'overlay-ASIDE'],
     'new-divs': [
       {
@@ -110,10 +112,6 @@ const lessonTargetLocations = {
     }
   }
 }
-
-
-
-
 
 class Tutorial {
   constructor () {
