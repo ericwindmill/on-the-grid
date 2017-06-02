@@ -644,6 +644,9 @@ input:focus {
 
 /****** GRID ITEMS LEVEL 1*****/
 .header-tutorial {
+  background-image: -o-linear-gradient(90deg, rgb(247,252,253), rgb(228,239,245), rgb(204,221,236), rgb(178,202,225), rgb(156,179,213), rgb(143,149,198), rgb(140,116,181), rgb(137,82,165), rgb(133,45,143), rgb(115,15,113), rgb(115,15,113));
+  background-image: -moz-linear-gradient(90deg, rgb(247,252,253), rgb(228,239,245), rgb(204,221,236), rgb(178,202,225), rgb(156,179,213), rgb(143,149,198), rgb(140,116,181), rgb(137,82,165), rgb(133,45,143), rgb(115,15,113), rgb(115,15,113));
+  background-image: -webkit-linear-gradient(90deg, rgb(247,252,253), rgb(228,239,245), rgb(204,221,236), rgb(178,202,225), rgb(156,179,213), rgb(143,149,198), rgb(140,116,181), rgb(137,82,165), rgb(133,45,143), rgb(115,15,113), rgb(115,15,113));
   background-image: linear-gradient(90deg, rgb(247,252,253), rgb(228,239,245), rgb(204,221,236), rgb(178,202,225), rgb(156,179,213), rgb(143,149,198), rgb(140,116,181), rgb(137,82,165), rgb(133,45,143), rgb(115,15,113), rgb(115,15,113));
   grid-column: 1 / 8;
   grid-row: 8 / 10;
