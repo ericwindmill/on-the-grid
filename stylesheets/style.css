@@ -40,8 +40,8 @@ pre {
 
 body{
   display:grid;
-  grid-template-columns: 425px 1fr;
-  grid-template-rows: 475px 1fr;
+  grid-template-columns: 425px auto;;
+  grid-template-rows: 475px auto;
   height: 100vh;
   background-color: mintcream;
 }
