@@ -9,9 +9,8 @@ Bugs:
  
 
 Todos: 
-  *Update links and whatnot for GH pages
   * README!
-  Github and personal site links
+  * update 'see the code' to include 'content
 
 
   Lessons:
