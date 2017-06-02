@@ -40,7 +40,7 @@ pre {
 
 body{
   display:grid;
-  grid-template-columns: 450px 1fr;
+  grid-template-columns: 500px 1fr;
   grid-template-rows: 475px 1fr;
   height: 100vh;
   background-color: mintcream;
@@ -78,6 +78,7 @@ body{
   font-family: 'Quicksand', serif;
   font-weight: 300;
   position: relative;
+  
 }
 
 #playground-information {}
@@ -318,6 +319,7 @@ input:focus {
 #alignment-selections {
     padding: 5px 0 10px;
     display: flex;
+    flex-flow: row;
 }
 
 #alignment-selections code select, 
@@ -326,6 +328,9 @@ input:focus {
   font-family: monospace;
   padding: 5px;
 }
+
+
+
 
 #grid-item-location-form {
   display:flex;
@@ -642,7 +647,7 @@ input:focus {
   right: 5%;
 }
 
-/****** GRID ITEMS LEVEL 1*****/
+/****** LESSON 1 GRID ITEMS ****/
 .header-tutorial {
   background-image: -o-linear-gradient(90deg, rgb(247,252,253), rgb(228,239,245), rgb(204,221,236), rgb(178,202,225), rgb(156,179,213), rgb(143,149,198), rgb(140,116,181), rgb(137,82,165), rgb(133,45,143), rgb(115,15,113), rgb(115,15,113));
   background-image: -moz-linear-gradient(90deg, rgb(247,252,253), rgb(228,239,245), rgb(204,221,236), rgb(178,202,225), rgb(156,179,213), rgb(143,149,198), rgb(140,116,181), rgb(137,82,165), rgb(133,45,143), rgb(115,15,113), rgb(115,15,113));
@@ -687,7 +692,7 @@ input:focus {
   grid-row: 10 / 11;
 }
 
-/****** GRID ITEMS LEVEL 2*****/
+/****** GRID ITEMS LESSON 2*****/
 .nav-tutorial {
   background-image: linear-gradient(90deg, rgb(204,221,236), rgb(178,202,225), rgb(156,179,213), rgb(143,149,198), rgb(140,116,181), rgb(137,82,165), rgb(133,45,143));
   grid-column: 1 / 7;
@@ -698,5 +703,31 @@ input:focus {
   background-color: rgba(20, 20, 20, .3);
   grid-column: 3 / 9;
   grid-row: 2 / 3;
+  z-index: 11;
+}
+
+/****** LESSON 3 Grid Items*****/
+.main-tutorial-3 {
+  background-image: linear-gradient(90deg, rgb(247,252,253), rgb(228,239,245), rgb(204,221,236), rgb(178,202,225), rgb(156,179,213), rgb(143,149,198));
+  grid-column: 2 / 8;
+  grid-row: 3 / 10;
+  z-index: 12;
+}
+.main-overlay-3 {
+  background-color: rgba(20, 20, 20, .1);
+  grid-column: 2 / 6;
+  grid-row: 3 / 10;
+  z-index: 11;
+}
+.aside-tutorial-3 {
+  background-image: linear-gradient(90deg, rgb(143,149,198), rgb(140,116,181), rgb(137,82,165), rgb(133,45,143), rgb(115,15,113), rgb(115,15,113));
+  grid-column: 8 / 10;
+  grid-row: 3 / 10;
+  z-index: 12;
+}
+.aside-overlay-3 {
+  background-color: rgba(20, 20, 20, .1);
+  grid-column: 6 / 10;
+  grid-row: 3 / 10;
   z-index: 11;
 }

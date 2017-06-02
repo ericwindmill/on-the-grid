@@ -1,8 +1,9 @@
 const lessons = {
   2: {
-    'lesson-copy': "<h1>Frantastic Grid Work!<h1><br><br><h2> Now check out how easy it is to overlay items!</h2><br>Grid items can easily be laid over other items, so long as they're established later in the HTML. Test it it out by putting that Nav Bar where it belongs.",
+    'lesson-copy': "<h1>Frantastic Grid Work!<h1><h2> Now check out how easy it is to overlay items!</h2><br>Grid items can easily be laid over other items, so long as they're established later in the HTML. Test it it out by putting that Nav Bar where it belongs.",
     'lesson-editor-text-id': 'lesson-2-editor',
-    'divs': [
+    'delete-divs': [],
+    'new-divs': [
       {
         'div-type': 'NAV',
         'classes': 'nav-tutorial',
@@ -14,8 +15,34 @@ const lessons = {
         'div-text': 'put NAV here'
       }
     ]
+  },
+  3: {
+    'lesson-copy': "<h1>Resizing Grid Items<h1><h2>Resizing is one of the most powerful concepts of grid.</h2><br>Simply the change the items column or row start/end locations and the items will stretch or shrink to fill up that space!<br><br> What if the content in the side bar is super important? Lets give it and the main section equal width using grid-column!",
+    'lesson-editor-text-id': 'lesson-3-editor',
+    'delete-divs': ['MAIN', 'overlay-MAIN', 'ASIDE', 'overlay-ASIDE'],
+    'new-divs': [
+      {
+        'div-type': 'MAIN',
+        'classes': 'main-tutorial-3',
+        'div-text': 'MAIN'
+      },
+      {
+        'div-type': 'overlay-MAIN',
+        'classes': 'main-overlay-3',
+        'div-text': 'MAIN'
+      },
+      {
+        'div-type': 'ASIDE',
+        'classes': 'aside-tutorial-3',
+        'div-text': 'IMPORTANT ASIDE'
+      },
+      {
+        'div-type': 'ASIDE',
+        'classes': 'aside-overlay-3',
+        'div-text': 'ASIDE'
+      }
+    ]
   }
-
 }
 
 
@@ -59,6 +86,28 @@ const lessonTargetLocations = {
       'grid-column': ['3 / 9', '3 / span 6'],
       'grid-row': ['2 / 3', '2 / span 3']
     }
+  },
+  3: {
+    'HEADER': {
+      'grid-column': ['2 / 10', '2 / span 8'],
+      'grid-row': ['1 / 3', '1 / span 2']
+    },
+    'MAIN': {
+      'grid-column': ['2 / 6', '2 / span 4'],
+      'grid-row': ['3 / 10', '3 / span 7']
+    },
+    'ASIDE': {
+      'grid-column': ['6 / 10', '8 / span 4'],
+      'grid-row': ['3 / 10', '3 / span 7']
+    },
+    'FOOTER': {
+      'grid-column': ['2 / 10', '2 / span 8'],
+      'grid-row': ['10 / 11', '10 / span 1']
+    },
+    'NAV': {
+      'grid-column': ['3 / 9', '3 / span 6'],
+      'grid-row': ['2 / 3', '2 / span 3']
+    }
   }
 }
 
@@ -73,7 +122,8 @@ class Tutorial {
     this.currentLesson = 1
     this.winningScores = {
       1: 8,
-      2: 10
+      2: 10,
+      3: 10
     }
   }
 
@@ -188,7 +238,8 @@ class Tutorial {
         }
       })
     })
-    if (correctDivCount === this.winningScores[this.currentLesson]) {
+    console.log(correctDivCount)
+    if (correctDivCount >= this.winningScores[this.currentLesson]) {
       this.currentLesson += 1
       this.tutorialOver(this.currentLesson)
     }
@@ -210,12 +261,20 @@ class Tutorial {
   }
 
   nextLesson (lesson) {
-    console.log(this.currentLesson)
     let lessonData = lessons[this.currentLesson]
     document.getElementById('lesson-copy').innerHTML = lessonData['lesson-copy']
-    document.getElementById(lessonData['lesson-editor-text-id']).style.visibility = 'visible'
+    let textEditor = document.getElementById(lessonData['lesson-editor-text-id']) || ''
+    if (textEditor) {
+      textEditor.style.visibility = 'visible'
+    }
 
-    lessonData['divs'].forEach(div => {
+    lessonData['delete-divs'].forEach(div => {
+      let parent = document.getElementById('wrapper')
+      let node = document.getElementById(div)
+      parent.removeChild(node)
+    })
+
+    lessonData['new-divs'].forEach(div => {
       let node = document.createElement('div')
       node.id = div['div-type']
       node.className = `grid-item ${div['classes']}`

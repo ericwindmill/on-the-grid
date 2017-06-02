@@ -88,7 +88,7 @@
             </select>
           </code>
           </div>
-          <div id="alignment-selections">
+          <div id="alignment-selections" class="content-alignments">
            <code>justify-content:
             <select id="justify-content-select">
               <option id="justify-content-start" value="start" >start</option>
@@ -168,25 +168,26 @@
   grid-template-rows: repeat(10, 1fr)
 }
 header {
-  grid-column: <input id="header-col-input" class="sm-editor-input editor-inputs" value=''/>
-  grid-row: <input id="header-row-input" class="sm-editor-input editor-inputs" value=''/>
+  grid-column: <input id="header-col-input" class="sm-editor-input editor-inputs" value='2 / 10'/>
+  grid-row: <input id="header-row-input" class="sm-editor-input editor-inputs" value='1 / 3'/>
 }
 main {
-  <input id='main-col-input' class="lg-editor-input editor-inputs" value='' />
-  <input id='main-col-input' class="lg-editor-input editor-inputs" value=''/>
+  <input id='main-col-input' class="lg-editor-input editor-inputs" value='grid-column: 2 / 8' />
+  <input id='main-col-input' class="lg-editor-input editor-inputs" value='grid-row: 3 / 10'/>
 }
 aside {
-  <input id='aside-col-input' class="lg-editor-input editor-inputs" value=''/>
-  <input id='aside-row-input' class="lg-editor-input editor-inputs" value=''/>
+  <input id='aside-col-input' class="lg-editor-input editor-inputs" value='grid-column: 8 / 10'/>
+  <input id='aside-row-input' class="lg-editor-input editor-inputs" value='grid-row: 3 / 10'/>
 }
 footer {
-  <input id='footer-col-input' class="lg-editor-input editor-inputs" value=''/>
-  <input id='footer-row-input' class="lg-editor-input editor-inputs" value=''/>
+  <input id='footer-col-input' class="lg-editor-input editor-inputs" value='grid-column: 2 / 10'/>
+  <input id='footer-row-input' class="lg-editor-input editor-inputs" value='grid-row: 10 / 11'/>
 }</code><code id='lesson-2-editor'>
 nav {
-  <input id='nav-col-input' class="lg-editor-input editor-inputs" value=''/>
-  <input id='nav-row-input' class="lg-editor-input editor-inputs" value=''/>
+  <input id='nav-col-input' class="lg-editor-input editor-inputs" value='grid-column: 3 / 9'/>
+  <input id='nav-row-input' class="lg-editor-input editor-inputs" value='grid-row: 2 / 3'/>
 }</code>
+<span data-tip="bonus: you can use the 'span' keyword" class="editor-tooltip"> Tips </span>
       </div>
     </section>
 
@@ -335,7 +336,7 @@ nav {
       <h2>It's never been so easy to make beautiful layouts using pure CSS.</h2><br />
        CSS Grid brings 2D layouting to the web! Establish a grid on your whole site or a section, and position the inner elements anywhere!<br><br>
        As of March 2017, CSS grid is supported by all major browsers.
-       <span class="tooltip-right playground-toggle-datatip" data-tip="CAREFUL! Grid items don't always end up where you'd expect them to. Turn on the grid and mash some buttons!" >
+       <span class="tooltip-right playground-toggle-datatip" data-tip="WARNING! Grid items don't always end up where you'd expect them to. Turn on the grid and mash some buttons!" >
         <h2 id="playground-toggle-button">Toggle Grid View</h2>
       </span>
       <span id="code-output-button">See the Code</span>
@@ -370,13 +371,13 @@ nav {
 
     <section id="tutorial-information">
       <div id='lesson-copy'>
-        <h1> ACCKKK! Who designed this website? </h1><br /><br />
+        <h1> ACCKKK! Who designed this website? </h1><br />
         <h2> They obviously don't know how easy it is to layout a website using CSS Grid!</h2>
         <br>
-          Use the text editor on the left to fix the layout. The most important part of grid is 
-          laying items on the grid using 'grid-rows' and 'grid-columns'. 
-
-          You'll only need to change the grid row/column numbers to layout this website.
+          The most important part of grid is laying elements in positions using 'grid-row' and 'grid-column'. 
+          <br><br>
+          You can see in the <code>body {}</code> selector that we've established a 10x10 grid. Go ahead and click the 'Toggle Grid View' button to see.
+          Your job is to change the column and row start and end positions of each element to layout the page!
       </div>
       <h2 id="tutorial-toggle-button">Toggle Grid View</h2>
       <span class="playground-link">
