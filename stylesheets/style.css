@@ -266,15 +266,15 @@ input:focus {
 }
 
 
-.tooltip-right { position: relative; }
-.tooltip-right:hover:before, .tooltip-right:hover:after {
+.tooltip-left { position: relative; }
+.tooltip-left:hover:before, .tooltip-left:hover:after {
   display: block;
   position: absolute;
   text-align: center;
   z-index: 1;
   background-color: black;
 }
-.tooltip-right:hover:before {
+.tooltip-left:hover:before {
     content:"";
     width:8px;
     height:8px;
@@ -282,7 +282,7 @@ input:focus {
     top:32px;
     left:22px;
 }
-.tooltip-right:hover:after {
+.tooltip-left:hover:after {
     content:attr(data-tip);
     color:linen;
     top:36px;
@@ -292,6 +292,36 @@ input:focus {
     padding:10px;
     line-height:1.36;
     box-sizing: border-box;
+}
+
+
+.tooltip-up { position: relative; }
+.tooltip-up:hover:before, .tooltip-up:hover:after {
+  display: block;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  background-color: black; 
+}
+.tooltip-up:hover:before {
+    content:"";
+    width:8px;
+    height:8px;
+    transform:rotate(45deg);
+    bottom:38px;
+    left:22px;
+}
+.tooltip-up:hover:after {
+    content:attr(data-tip);
+    color:linen;
+    bottom:42px;
+    left:-160px;
+    width:320px;
+    font-size:16px;
+    padding:10px;
+    line-height:1.36;
+    box-sizing: border-box;
+    white-space: pre-wrap;
 }
 
 
@@ -574,6 +604,17 @@ input:focus {
 
 #back-home-link:active {
   padding: 4px;
+}
+
+.tips-datatip {
+  position: absolute;
+  bottom: 13%;
+  left: 5%;
+  background-color: hsl(240, 100%, 95%);
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 5px;
+
 }
 
 .playground-link {
