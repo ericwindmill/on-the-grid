@@ -149,6 +149,16 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.style.alignItems = alignSelection.value
   }
 
+  const justifyContentSelection = document.getElementById('justify-content-select')
+  justifyContentSelection.onchange = () => {
+    wrapper.style.justifyContent = justifyContentSelection.value
+  }
+
+  const alignContentSelection = document.getElementById('align-content-select')
+  alignContentSelection.onchange = () => {
+    wrapper.style.alignContent = alignContentSelection.value
+  }
+
   // ======== Buttons to change number of grid item ======== //
   let gridNum = 7
   const lyrics = ['and', 'nothing', 'to', 'get', 'hung', 'about', 'Strawberry', 'Fields', 'Forever',

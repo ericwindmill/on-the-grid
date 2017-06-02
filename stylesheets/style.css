@@ -113,6 +113,7 @@ body{
 #wrapper {
   display: grid;
   z-index: 0;
+  position: relative;
 }
 
 #tutorial-overlay {
@@ -126,17 +127,22 @@ body{
 
 #tutorial-overlay span {
   border: .5px dashed lightgrey;
+  z-index: 1;
+  position: relative;
 }
 
 #playground-overlay {
   visibility: hidden;
   display: grid;
-
   background: none;
+  z-index: 1;
+  position: relative;
 }
 
 #playground-overlay span {
   border: .5px dashed lightgrey;
+  position: relative;
+  z-index: 1;
 }
 
 .grid-item{
@@ -151,6 +157,7 @@ body{
   align-items: center;
   justify-content: center;
   z-index:3;
+  position: relative;
 }
 
 #grid-item-span {
@@ -158,6 +165,8 @@ body{
   font-size: 1em;
   vertical-align: middle;
   overflow: hidden;
+  z-index:3;
+  position: relative;
 }
 
 
