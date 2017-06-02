@@ -87,6 +87,24 @@
               <option id="align-items-stretch" value="stretch">stretch</option>
             </select>
           </code>
+          </div>
+          <div id="alignment-selections">
+           <code>justify-content:
+            <select id="justify-select">
+              <option id="justify-items-start" value="start" >start</option>
+              <option id="justify-items-end" value="end">end</option>
+              <option id="justify-items-center" value="center">center</option>
+              <option id="justify-items-stretch" value="stretch">stretch</option>
+            </select>
+          </code>
+          <code>align-content:
+            <select id="justify-select">
+              <option id="justify-items-start" value="start" >start</option>
+              <option id="justify-items-end" value="end">end</option>
+              <option id="justify-items-center" value="center">center</option>
+              <option id="justify-items-stretch" value="stretch">stretch</option>
+            </select>
+          </code>
         </div>
       </section>
       <section class="grid-item-properties">
@@ -158,10 +176,10 @@ aside {
 footer {
   <input id='footer-col-input' class="lg-editor-input editor-inputs" value='grid-column: 2 / 10'/>
   <input id='footer-row-input' class="lg-editor-input editor-inputs" value='grid-row: 10 / 11'/>
-}</code><code id='tutorial-editor-nav'>
+}</code><code id='lesson-2-editor'>
 nav {
-  <input id='nav-col-input' class="lg-editor-input editor-inputs" value=''/>
-  <input id='nav-row-input' class="lg-editor-input editor-inputs" value=''/>
+  <input id='nav-col-input' class="lg-editor-input editor-inputs" value='grid-column: 3 / 9'/>
+  <input id='nav-row-input' class="lg-editor-input editor-inputs" value='grid-row: 2 / 3'/>
 }</code>
       </div>
     </section>
@@ -175,7 +193,7 @@ nav {
                 justify-items: stretch;
                 align-items: stretch;
               '>
-      <div id="display-grid-1" class="grid-item"><span id="grid-item-span" contenteditable="true">cuase</span></div>
+      <div id="display-grid-1" class="grid-item"><span id="grid-item-span" contenteditable="true">cause</span></div>
       <div id="display-grid-2" class="grid-item"><span id="grid-item-span" contenteditable="true">I'm</span></div>
       <div id="display-grid-3" class="grid-item"><span id="grid-item-span" contenteditable="true">going</span></div>
       <div id="display-grid-4" class="grid-item"><span id="grid-item-span" contenteditable="true">down</span></div>
@@ -347,8 +365,10 @@ nav {
     </section> 
     <div id="page-mask"></div>
 
+
+
     <section id="tutorial-information">
-      <div id='lesson-1-copy'>
+      <div id='lesson-copy'>
         <h1> ACCKKK! Who designed this website? </h1><br /><br />
         <h2> They obviously don't know how easy it is to layout a website using CSS Grid!</h2>
         <br>
@@ -361,6 +381,15 @@ nav {
       <span class="playground-link">
         <p id="back-home-link"><a href="/Users/eric/Desktop/on_the_grid/index.html">Back to the Playground!</a></p>
       </span>
+    </section>
+
+    <setion id='tutorial-over-modal'>
+      <div class='tutorial-over-modal-text'>
+        <h1> You're a Grid Master! </h1>
+        <p>New lessons are added all the time, be sure to check back!</p>
+        <p>For now, checkout <a href='http://www.ericwindmill.com/'> my site </a> for more useful tools!</p>  
+        <a id='modal-back-link' href="/Users/eric/Desktop/on_the_grid/index.html">Back to the Playground!</a>
+      </div>
     </section>
 
   </body>

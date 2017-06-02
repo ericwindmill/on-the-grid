@@ -1,45 +1,25 @@
-const level1TargetLocations = {
-  'HEADER': {
-    'grid-column': ['2 / 10', '2 / span 8'],
-    'grid-row': ['1 / 3', '1 / span 2']
-  },
-  'MAIN': {
-    'grid-column': ['2 / 8', '2 / span 6'],
-    'grid-row': ['3 / 10', '3 / span 7']
-  },
-  'ASIDE': {
-    'grid-column': ['8 / 10', '8 / span 2'],
-    'grid-row': ['3 / 10', '3 / span 7']
-  },
-  'FOOTER': {
-    'grid-column': ['2 / 10', '2 / span 8'],
-    'grid-row': ['10 / 11', '10 / span 1']
+const lessons = {
+  2: {
+    'lesson-copy': "<h1>Frantastic Grid Work!<h1><br><br><h2> Now check out how easy it is to overlay items!</h2><br>Grid items can easily be laid over other items, so long as they're established later in the HTML. Test it it out by putting that Nav Bar where it belongs.",
+    'lesson-editor-text-id': 'lesson-2-editor',
+    'divs': [
+      {
+        'div-type': 'NAV',
+        'classes': 'nav-tutorial',
+        'div-text': 'NAV'
+      },
+      {
+        'div-type': 'overlay-NAV',
+        'classes': 'nav-overlay',
+        'div-text': 'put NAV here'
+      }
+    ]
   }
-}
-const level2TargetLocations = {
-  'HEADER': {
-    'grid-column': ['2 / 10', '2 / span 8'],
-    'grid-row': ['1 / 3', '1 / span 2']
-  },
-  'MAIN': {
-    'grid-column': ['2 / 8', '2 / span 6'],
-    'grid-row': ['3 / 10', '3 / span 7']
-  },
-  'ASIDE': {
-    'grid-column': ['8 / 10', '8 / span 2'],
-    'grid-row': ['3 / 10', '3 / span 7']
-  },
-  'FOOTER': {
-    'grid-column': ['2 / 10', '2 / span 8'],
-    'grid-row': ['10 / 11', '10 / span 1']
-  },
-  'NAV': {
-    'grid-column': ['3 / 9', '3 / span 6'],
-    'grid-row': ['2 / 3', '2 / span 3']
-  }
+
 }
 
-const levelTargetLocations = {
+
+const lessonTargetLocations = {
   1: {
     'HEADER': {
       'grid-column': ['2 / 10', '2 / span 8'],
@@ -84,19 +64,17 @@ const levelTargetLocations = {
 
 
 
+
+
 class Tutorial {
   constructor () {
     this.gridWrapper = document.getElementById('wrapper')
     this.divs = ['HEADER', 'MAIN', 'ASIDE', 'FOOTER']
-    this.level1TargetLocations = level1TargetLocations
     this.currentLesson = 1
     this.winningScores = {
       1: 8,
       2: 10
     }
-    this.level1WinningScore = 8
-    this.level2WinningScore = 10
-
   }
 
   toggleGridView () {
@@ -186,44 +164,68 @@ class Tutorial {
 
     return formatted.join('')
   }
-  // I need to pass in informaion, such as the level winning score.
+  // I need to pass in informaion, such as the lesson winning score.
   checkWon () {
     let correctDivCount = 0
     this.divs.forEach(element => {
       let div = document.getElementById(element)
-      Object.entries(levelTargetLocations[this.currentLesson]).forEach(([k, v]) => {
+      Object.entries(lessonTargetLocations[this.currentLesson]).forEach(([k, v]) => {
         if (k === div.id) {
-          // let jsProperties = []
-          // Object.keys(v).forEach(property => {
-          //   jsProperties.push(this.formatCSSpropsForJS(property))
-          // })
-
-          if (div.style.gridColumn === v['grid-column'][0] || div.style.gridColumn === v['grid-column'][1]) {
-            correctDivCount += 1
-          }
-          if (div.style.gridRow === v['grid-row'][0] || div.style.gridRow === v['grid-row'][1]) {
-            correctDivCount += 1
-          }
+          let jsProperties = []
+          let cssProperties = []
+          let properties = {}
+          Object.keys(v).forEach(property => {
+            cssProperties.push(property)
+            jsProperties.push(this.formatCSSpropsForJS(property))
+            properties[property] = this.formatCSSpropsForJS(property)
+          })
+          Object.entries(properties).forEach(([css, js]) => {
+            // debugger
+            if (div.style[js] === v[css][0] || div.style[js] === v[css][1]) {
+              correctDivCount += 1
+            }
+          })
         }
       })
     })
     if (correctDivCount === this.winningScores[this.currentLesson]) {
-      this.nextLesson()
+      this.currentLesson += 1
+      this.tutorialOver(this.currentLesson)
     }
   }
 
-  // here is where I should pass in a new lesson
-  nextLesson () {
-    document.getElementById('lesson-1-copy').innerHTML = "<h1>Frantastic Grid Work!<h1><br><br><h2> Now check out how easy it is to overlay items!</h2><br>Grid items can easily be laid over other items, so long as they're established later in the HTML. Test it it out by putting that Nav Bar where it belongs."
-    document.getElementById('tutorial-editor-nav').style.visibility = 'visible'
-    let nav = document.createElement('div')
-    nav.id = 'NAV'
-    nav.className = `grid-item nav-tutorial`
-    nav.innerHTML = 'NAV'
-    
-    this.gridWrapper.appendChild(nav)
+  tutorialOver (lesson) {
+    if (lesson === Object.keys(lessons).length + 2) {
+      let tutorialOverModal = document.getElementById('tutorial-over-modal')
+      let mask = document.getElementById('page-mask')
+      tutorialOverModal.style.visibility = 'visible'
+      tutorialOverModal.style.zIndex = 100
+      tutorialOverModal.style.opacity = 1
+      mask.style.visibility = 'visible'
+      mask.style.zIndex = 99
+      mask.style.opacity = 1
+    } else {
+      this.nextLesson(lesson)
+    }
+  }
+
+  nextLesson (lesson) {
+    console.log(this.currentLesson)
+    let lessonData = lessons[this.currentLesson]
+    document.getElementById('lesson-copy').innerHTML = lessonData['lesson-copy']
+    document.getElementById(lessonData['lesson-editor-text-id']).style.visibility = 'visible'
+
+    lessonData['divs'].forEach(div => {
+      let node = document.createElement('div')
+      node.id = div['div-type']
+      node.className = `grid-item ${div['classes']}`
+      node.innerHTML = div['div-text']
+      this.gridWrapper.appendChild(node)
+      this.divs.push(div['div-type'])
+    })
   }
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const tutorial = new Tutorial()

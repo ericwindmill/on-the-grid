@@ -229,7 +229,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ======== See the Code Modal ======== //
   const seeTheCodeButton = document.getElementById('code-output-button')
   const seeTheCode = document.getElementById('see-the-code-popup')
-  const mask = document.getElementById('page-mask')
+  let mask = document.getElementById('page-mask')
+  // This is included for a different modal, clicking the mask sets ALL modals
+  // visibility to hidden
+  let tutorialOverModal = document.getElementById('tutorial-over-modal')
 
   // Properties to Populate
   const modalTemplateRows = document.getElementById('modal-template-rows')
@@ -267,6 +270,9 @@ document.addEventListener('DOMContentLoaded', () => {
       seeTheCode.style.visibility = 'hidden'
       seeTheCode.style.opacity = 0
       seeTheCode.style.zIndex = -1
+      tutorialOverModal.style.visibility = 'hidden'
+      tutorialOverModal.style.opacity = 0
+      tutorialOverModal.style.zIndex = -1
     }
   })
 
