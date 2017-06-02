@@ -343,6 +343,9 @@ nav {
       <span class="tutorial-link">
        <p>Does this look like gibberrish?</p><p id="begin-tutorial-link">Go to the Grid tutorial!</p>
       </span>
+      <span id="tips-link">
+       <p class='toggle-tips-link'>Tips</p>
+      </span>
     </section>
 
     <section id='see-the-code-popup'>
@@ -363,7 +366,7 @@ nav {
           align-self: < stretch / start / end / center >
           justify-self: < stretch / start / end / center >
         }
-        </code>
+        </code></pre>
     </section> 
     <div id="page-mask"></div>
 
@@ -384,9 +387,22 @@ nav {
         <p id="back-home-link"><a href="/Users/eric/Desktop/on_the_grid/index.html">Back to the Playground!</a></p>
       </span>
       <span class="tooltip-up lesson-datatip" data-tip="grid-column is short hand for grid-column-start / grid-column-end. It takes two inputs like so: ' x / y'.&#010; &#010; Bonus: You can try '1 / span 2' rather than '1 / 3'. "> 
-        <h2>Tips</h2>
+        <p class='toggle-tips-link' id='tutorial-tips'>Tips</p>
       </span>
     </section>
+
+    <section id='quicktips-modal'>
+      <div class='tutorial-over-modal-text'>
+        <h1>Quick Tips and Hang Ups</h1>
+        <ul>
+          <li class='tip-modal-li'>The size of grid items is based on its column and row start and end positions. Learn more in the tutorial.</li>
+          <li class='tip-modal-li'>If you click on a grid item and change add text, eventually it will expand past the grid. This is because grid items are taken out of the normal flow of the document.</li>
+          <li class='tip-modal-li'>Justify and Align variations don't always behave how you'd expect. Remember this: 'items' places grid items in relation to their row/column, while 'content' treats all the items as one entity with a relationship to the grid. </li>
+          <li class='tip-modal-li'>Grid has an autoplacement algorithm that adds new items in the next available space based on the flow of the grid (flow: row is default). If you explicitly place certain items, the algorithm will place remaining items in the first available spot it can find. Try placing a larger item right in the middle of the grid, and then adding and taking away other items! </li>
+        </ul>
+      </div>
+    </section>
+
 
     <setion id='tutorial-over-modal'>
       <div class='tutorial-over-modal-text'>
@@ -396,6 +412,9 @@ nav {
         <a id='modal-back-link' href="/Users/eric/Desktop/on_the_grid/index.html">Back to the Playground!</a>
       </div>
     </section>
+
+
+
 
   </body>
 </html>

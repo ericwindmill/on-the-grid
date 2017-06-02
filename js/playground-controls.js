@@ -272,6 +272,21 @@ document.addEventListener('DOMContentLoaded', () => {
     modalAlign.innerHTML = wrapper.style.alignItems
   })
 
+
+
+  // ======== Toggle Tips Modal ======== //
+  const toggleTipsButton = document.getElementById('tips-link')
+  const tipsModal = document.getElementById('quicktips-modal')
+
+  toggleTipsButton.addEventListener('click', () => {
+    tipsModal.style.visibility = 'visible'
+    tipsModal.style.zIndex = 100
+    tipsModal.style.opacity = 1
+    mask.style.visibility = 'visible'
+    mask.style.zIndex = 99
+    mask.style.opacity = 1
+  })
+
   mask.addEventListener('click', () => {
     if (mask.style.visibility === 'visible') {
       mask.style.visibility = 'hidden'
@@ -283,12 +298,9 @@ document.addEventListener('DOMContentLoaded', () => {
       tutorialOverModal.style.visibility = 'hidden'
       tutorialOverModal.style.opacity = 0
       tutorialOverModal.style.zIndex = -1
+      tipsModal.style.visibility = 'hidden'
+      tipsModal.style.zIndex = 0
+      tipsModal.style.opacity = -1
     }
   })
-
-  // ======== Populate See the Code Modal ======== //
-
-  
-  
-
 })

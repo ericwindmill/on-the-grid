@@ -11,11 +11,7 @@ Bugs:
 Todos: 
   *Update links and whatnot for GH pages
   * README!
-  * Add a 'tips' modal that gives all sorts of insigts:
-   * blocks expand past grid if you type in too much text. This is because grid items are basically out of the normal flow of the document.
-   * why justify / align don't always act in the way you'd expect.
-   * auto placement, it even wraps the other items around explicitly placed
-   * auto-fill thing
+  Github and personal site links
 
 
   Lessons:
