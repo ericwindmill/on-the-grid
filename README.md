@@ -1,6 +1,8 @@
 # On the Grid 
 [On The Grid](https://ericwindmill.github.io/on-the-grid/) is a sandbox that teaches web developers how to use CSS Grid.
 
+![On The Grid](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_1000/v1496430370/Screen_Shot_2017-06-02_at_12.04.35_PM_osnafz.png)
+
 There are two modes in CSS Grid. The main page features the sand box mode. Its your space to go crazy with different Grid properties! Or, you can click the button that takes you to the 'Tutorial' mode, where you'll follow instructions that walk you through setting up a grid.
 
 # Technology
