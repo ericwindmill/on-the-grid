@@ -70,7 +70,6 @@ body{
   border-radius: 5px;
   margin: 20px;
   min-width: 480px;
-  z-index: 1;
 }
 
 #playground-information, #tutorial-information {
@@ -112,7 +111,6 @@ body{
 *============================*/
 #wrapper {
   display: grid;
-  z-index: 0;
   position: relative;
 }
 
@@ -122,12 +120,10 @@ body{
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   background: none;
-  z-index: 0;
 }
 
 #tutorial-overlay span {
   border: .5px dashed lightgrey;
-  z-index: 1;
   position: relative;
 }
 
@@ -135,14 +131,12 @@ body{
   visibility: hidden;
   display: grid;
   background: none;
-  z-index: 1;
   position: relative;
 }
 
 #playground-overlay span {
   border: .5px dashed lightgrey;
   position: relative;
-  z-index: 1;
 }
 
 .grid-item{
@@ -156,16 +150,15 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index:3;
   position: relative;
+  z-index:10;
 }
 
-#grid-item-span {
+.grid-item-span {
   padding: 15px;
   font-size: 1em;
   vertical-align: middle;
   overflow: hidden;
-  z-index:3;
   position: relative;
 }
 
