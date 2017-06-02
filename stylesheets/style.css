@@ -40,7 +40,7 @@ pre {
 
 body{
   display:grid;
-  grid-template-columns: 475px 1fr;
+  grid-template-columns: 425px 1fr;
   grid-template-rows: 475px 1fr;
   height: 100vh;
   background-color: mintcream;
@@ -80,8 +80,6 @@ body{
   position: relative;
   
 }
-
-#playground-information {}
 
 #tutorial-information {
   visibility: hidden;
@@ -182,14 +180,14 @@ body{
 
 .wrapper-properties .ui-subhead,
 .grid-setup .ui-subhead {
+  margin-top: 5px;
   margin-bottom: 15px;
 }
-
-
 
 .click-to-select {
   font-size: 1em;
   text-align: center;
+  margin-top: 2px;;
 }
 
 .wrapper-properties {
@@ -206,6 +204,7 @@ body{
 .ui-h3 {
   font-size: 1.1em;
   margin-top:0;
+  margin-bottom: 3px;
 }
 
 code {
@@ -578,11 +577,22 @@ input:focus {
 }
 
 #branding-links-main {
-  position: absolute;
-  bottom: 2%;
-  left: 14%;
-  transform: translate(-50%, -50%);
+  margin-top: 10px;
+  padding-top: 15px;
+  border-top: 1px darkgrey solid;
+  text-align: center;
+  font-family: monospace;
+  text-decoration: none;
 }
+
+.branding-link-main {
+  color: black
+}
+
+.branding-link-main:hover {
+  color:  hsl(336, 100%,45%);
+}
+
 
 /*============================*
     TUTORIAL STYLES
