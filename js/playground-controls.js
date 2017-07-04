@@ -12,14 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   // ======== Toggle Overlay ======== //
-  const toggleButton = document.getElementById('playground-toggle-button')
-  toggleButton.addEventListener('click', function () {
-    if (playgroundOverlay.style.visibility === 'hidden' || playgroundOverlay.style.visibility === '') {
-      playgroundOverlay.style.visibility = 'visible'
-    } else {
-      playgroundOverlay.style.visibility = 'hidden'
-    }
-  })
+  // const toggleButton = document.getElementById('playground-toggle-button')
+  // toggleButton.addEventListener('click', function () {
+  //   if (playgroundOverlay.style.visibility === 'hidden' || playgroundOverlay.style.visibility === '') {
+  //     playgroundOverlay.style.visibility = 'visible'
+  //   } else {
+  //     playgroundOverlay.style.visibility = 'hidden'
+  //   }
+  // })
 
   // ======== Inputs to change row / column numbers ======== //
   let rowNum = 3 

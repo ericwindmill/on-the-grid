@@ -61,6 +61,7 @@ body{
   border-radius: 5px;
   margin: 20px;
   min-width: 480px;
+  overflow: auto;
 }
 
 .display-overlay {
@@ -489,7 +490,7 @@ input:focus {
 #code-output-button {
   position: absolute;
   top: -15%;
-  left: 65%;
+  right: 5%;
   background-color: hsl(336, 100%, 95%);
   border: 1px solid lightgrey;
   border-radius: 5px;
